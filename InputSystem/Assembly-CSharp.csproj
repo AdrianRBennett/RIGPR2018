@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{FF90ED04-365D-8231-E0C6-B100676833BA}</ProjectGuid>
+    <ProjectGuid>{4E6C4A6B-1089-D04F-0DFE-B40F5493813B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -55,8 +55,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CommandScripts\Command.cs" />
      <Compile Include="Assets\Scripts\CommandScripts\Subclasses\CommandPickUp.cs" />
-     <Compile Include="Assets\Scripts\ExampleStreaming.cs" />
-     <Compile Include="Assets\Scripts\InputManager.cs" />
+     <Compile Include="Assets\Scripts\InputScripts\ExampleStreaming.cs" />
+     <Compile Include="Assets\Scripts\InputScripts\InputManager.cs" />
      <Compile Include="Assets\Scripts\SceneDataScripts\SceneData.cs" />
      <Compile Include="Assets\Scripts\SceneDataScripts\Subclasses\SceneOneData.cs" />
      <Compile Include="Assets\Watson\Examples\ServiceExamples\Scripts\ExampleSpeechToText.cs" />
@@ -326,16 +326,16 @@
      <None Include="Assets\Watson\NOTICES.txt" />
      <None Include="Assets\Watson\Examples\ServiceExamples\TestData\theJabberwocky-utf8.txt" />
  <Reference Include="UnityEditor.StandardEvents">
- <HintPath>C:/Users/benne/Documents/Education/Uni/Year 3/Units/RIGPR/Input System/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ <HintPath>C:/Users/benne/Documents/Education/Uni/Year 3/Units/RIGPR/InputSystem/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/benne/Documents/Education/Uni/Year 3/Units/RIGPR/Input System/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/benne/Documents/Education/Uni/Year 3/Units/RIGPR/InputSystem/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>C:/Users/benne/Documents/Education/Uni/Year 3/Units/RIGPR/Input System/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>C:/Users/benne/Documents/Education/Uni/Year 3/Units/RIGPR/InputSystem/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/benne/Documents/Education/Uni/Year 3/Units/RIGPR/Input System/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/benne/Documents/Education/Uni/Year 3/Units/RIGPR/InputSystem/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -536,7 +536,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="websocket-sharp">
- <HintPath>C:/Users/benne/Documents/Education/Uni/Year 3/Units/RIGPR/Input System/Assets/Watson/Plugins/websocket-sharp.dll</HintPath>
+ <HintPath>C:/Users/benne/Documents/Education/Uni/Year 3/Units/RIGPR/InputSystem/Assets/Watson/Plugins/websocket-sharp.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>C:/Users/benne/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>

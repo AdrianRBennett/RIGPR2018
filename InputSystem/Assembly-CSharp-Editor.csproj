@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F7A8A859-4FA9-BC12-FAF7-5D6A13E0A771}</ProjectGuid>
+    <ProjectGuid>{955A60C5-10A6-119F-0C29-C9C656137B05}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -60,16 +60,16 @@
      <None Include="Assets\Watson\Scripts\Editor\Help\Working\SHFBContent.xml" />
      <None Include="Assets\Watson\Scripts\Editor\Help\Working\StopWordList.txt" />
  <Reference Include="UnityEditor.StandardEvents">
- <HintPath>C:/Users/benne/Documents/Education/Uni/Year 3/Units/RIGPR/Input System/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ <HintPath>C:/Users/benne/Documents/Education/Uni/Year 3/Units/RIGPR/InputSystem/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/benne/Documents/Education/Uni/Year 3/Units/RIGPR/Input System/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/benne/Documents/Education/Uni/Year 3/Units/RIGPR/InputSystem/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>C:/Users/benne/Documents/Education/Uni/Year 3/Units/RIGPR/Input System/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>C:/Users/benne/Documents/Education/Uni/Year 3/Units/RIGPR/InputSystem/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/benne/Documents/Education/Uni/Year 3/Units/RIGPR/Input System/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/benne/Documents/Education/Uni/Year 3/Units/RIGPR/InputSystem/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -312,7 +312,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="websocket-sharp">
- <HintPath>C:/Users/benne/Documents/Education/Uni/Year 3/Units/RIGPR/Input System/Assets/Watson/Plugins/websocket-sharp.dll</HintPath>
+ <HintPath>C:/Users/benne/Documents/Education/Uni/Year 3/Units/RIGPR/InputSystem/Assets/Watson/Plugins/websocket-sharp.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Users/benne/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -359,7 +359,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{FF90ED04-365D-8231-E0C6-B100676833BA}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+      <Project>{4E6C4A6B-1089-D04F-0DFE-B40F5493813B}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
