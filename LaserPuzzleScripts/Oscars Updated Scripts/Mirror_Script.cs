@@ -20,15 +20,13 @@ public class Mirror_Script : MonoBehaviour {
             }
         }
 
-        DrawLaser(newHit, hit.point);
+        Laser_Cylinder.transform.position = hit.point;
+        Laser_Cylinder.transform.LookAt(newHit.point);
+        Laser_Cylinder.transform.localScale = new Vector3(1.0f, 1.0f, (newHit.distance * 5.0f));
         Debug.DrawLine(hit.point, newHit.point, Color.blue, 0.1f);
         render_Laser = true;
+        
     }
-	void DrawLaser(RaycastHit hit, Vector3 origin){
-		Laser_Cylinder.transform.position = origin;
-        	Laser_Cylinder.transform.LookAt(hit.point);
-        	Laser_Cylinder.transform.localScale = new Vector3(1.0f, 1.0f, (hit.distance * 5.0f));
-	}
 
 	// Use this for initialization
 	void Start () {
@@ -45,6 +43,7 @@ public class Mirror_Script : MonoBehaviour {
         else
         {
             render_Laser = false;
-        }        
+        }
+        
 	}
 }

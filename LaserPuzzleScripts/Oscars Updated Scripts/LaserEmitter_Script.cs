@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class LaserEmitter_Script : MonoBehaviour {
 
-
     public GameObject Laser_Origin;
+
+    public float Max_RayCast;
 
     public GameObject Laser_Cylinder;
 
@@ -21,15 +22,12 @@ public class LaserEmitter_Script : MonoBehaviour {
             }
 
         }
-        DrawLaser(hit, Laser_Origin.transform.position);
+        Laser_Cylinder.transform.position = Laser_Origin.transform.position;
+        Laser_Cylinder.transform.LookAt(hit.point);
+        Laser_Cylinder.transform.localScale = new Vector3(1.0f, 1.0f, (hit.distance * 5.0f));
         Debug.DrawLine(Laser_Origin.transform.position, hit.point, Color.blue, 0.1f);
     }
 
-	void DrawLaser(Raycast hit, Vector3 origin){
-		Laser_Cylinder.transform.position = origin;
-        	Laser_Cylinder.transform.LookAt(hit.point);
-        	Laser_Cylinder.transform.localScale = new Vector3(1.0f, 1.0f, (hit.distance * 5.0f));
-	}
 	// Use this for initialization
 	void Start () {
 		
