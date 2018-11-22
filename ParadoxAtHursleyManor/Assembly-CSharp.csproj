@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{16F39141-029B-15B3-21A1-35DB20E65317}</ProjectGuid>
+    <ProjectGuid>{E06B7D64-4B08-1A01-49C0-5FE4D42D71A9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -61,22 +61,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CameraMove.cs" />
     <Compile Include="Assets\Scripts\Activate_On_Trigger.cs" />
+    <Compile Include="Assets\Scripts\CameraMove.cs" />
+    <Compile Include="Assets\Scripts\Interaction_and_rotation_scripts\Interact_Script.cs" />
+    <Compile Include="Assets\Scripts\Interaction_and_rotation_scripts\Object_Rotate.cs" />
     <Compile Include="Assets\Scripts\Laser_Test.cs" />
     <Compile Include="Assets\Scripts\LaserEmitter_Script.cs" />
     <Compile Include="Assets\Scripts\Mirror_Script.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>D:/Unity Hub/Unity Files/Unity Files/Laser Test/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>D:/Repo Folder/RIGPR_REPO/ParadoxAtHursleyManor/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/Unity Hub/Unity Files/Unity Files/Laser Test/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/Repo Folder/RIGPR_REPO/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/Unity Hub/Unity Files/Unity Files/Laser Test/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/Repo Folder/RIGPR_REPO/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Unity Hub/Unity Files/Unity Files/Laser Test/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/Repo Folder/RIGPR_REPO/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Unity Hub/Unity Files/2018.2.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

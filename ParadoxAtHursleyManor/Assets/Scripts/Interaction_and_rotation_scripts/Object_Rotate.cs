@@ -4,37 +4,39 @@ using UnityEngine;
 
 public class Object_Rotate : MonoBehaviour {
 
-    private Quaternion target;
+    // Attach this to the Mirror_Prefab asset, which is attached to the Mirror_Object and located in the Programmer art folder.
+    // This script could be attached to any object indevidually however in this instance updating the prefab file will update
+    // all other prefabs in the game (if this is unclear ask Oscar).
+    
+    public Transform target;
 
     private void Start()
     {
-        target = transform.rotation;
+        target.eulerAngles = transform.eulerAngles;
     }
 
     private void Update()
     {
-        Quaternion current = transform.rotation;
-        transform.rotation = Quaternion.Slerp(current, target, Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, target.rotation, Time.deltaTime * 1.0f);
     }
 
     public void RotateObjectRight()
     {
-        target.eulerAngles.Set(target.eulerAngles.x,(target.eulerAngles.y + 45), target.eulerAngles.z);
-        transform.Rotate(Vector3.up * 45);
+        target.Rotate(Vector3.up * 45);
     }
 
     public void RotateObjectLeft()
     {
-        transform.Rotate(Vector3.up * -45);
+        target.Rotate(Vector3.up * -45);
     }
 
     public void RotateObjectUp()
     {
-        transform.Rotate(Vector3.right * 45);
+        target.Rotate(Vector3.right * -45);
     }
 
     public void RotateObjectDown()
     {
-        transform.Rotate(Vector3.right * -45);
+        target.Rotate(Vector3.right * 45);
     }
 }
