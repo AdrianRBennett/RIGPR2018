@@ -227,7 +227,7 @@ public class ExampleStreaming : MonoBehaviour
                     string text = string.Format("{0} ({1}, {2:0.00})\n", alt.transcript, res.final ? "Final" : "Interim", alt.confidence);
                     Log.Debug("ExampleStreaming.OnRecognize()", text);
 					if(res.final == true)
-						inputMngr.SplitInputToWordList(alt.transcript);
+						inputMngr.ProcessInput(alt.transcript);
                 }
 
                 if (res.keywords_result != null && res.keywords_result.keyword != null)

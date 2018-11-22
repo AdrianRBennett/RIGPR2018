@@ -4,30 +4,99 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour {
 
-	public string[] latestInputWordList;
-	public UnityEngine.UI.Text testText;
+	// PUBLIC MEMBERS
 
-	//PRIVATE VARIABLES
-	 
+	public string[] latestInputWordList;				// A string array containing the latest spoken words.
+	public UnityEngine.UI.Text customDebugText;			// A debug text object that displays the latest spoken words.
+	public bool customDebugTextOn;						// A flag to control the display of the debug text.
+
+	// PRIVATE MEMBERS
+
+	private Player playerRef;							// A reference to the player object.
+	private SceneData sceneDataRef;						// A reference to the scene data. Needed for current command list so will need to be assigned a new value for each scene.
+	private string latestCommand;						// Holds the latest spoken command.
+	private Item latestItem;							// Holds the latest spoken item.
 	private char[] splittingCharacters = new char[] {	// The input string is split at each instance of these characters.
 		' '
 	};
 
 	void Start () {
+		/*
+			Initialisation function. 
+		*/ 
 		latestInputWordList = new string[] { "default" };
+		playerRef = FindObjectOfType<Player> ();
+		sceneDataRef = FindObjectOfType<SceneData> ();
 	}
 
 	void Update () {
-		testText.text = latestInputWordList [0];
-
+		/*
+			Update function. 
+		*/ 
+		customDebugText.text = "";
+		if (customDebugTextOn) {
+			for (int i = 0; i < latestInputWordList.Length; i++) {
+				customDebugText.text += latestInputWordList [i] + " ";
+			}
+		}
 	}
 
-	public void SplitInputToWordList(string input) {
+	// PUBLIC METHODS
 
-		latestInputWordList = input.Split (splittingCharacters);
+	public void ProcessInput(string input) {
+		/*
+			A function to be called by the input source.
+			It calls the necessary functions to identify functions from spoken words and send corresponding commands to the correct items.
+		*/ 
+		latestInputWordList = SplitInputToWordList (input);
+		IdentifyCommandsAndItems (sceneDataRef);
+		SendCommand ();
+	}
 
-		if (latestInputWordList.Length >= 2) {
-			int test = 0;
+	// PRIVATE METHODS
+
+	private string[] SplitInputToWordList(string input) {
+		/*
+			 Splits the input string into a string array of individual words and assigns the result to latestInputWordList.
+		*/
+		return input.Split (splittingCharacters);
+	}
+
+	private void IdentifyCommandsAndItems(SceneData data) {
+		/*
+			Iterates through the list of latest spoken words and checks if each of them are commands or items.
+			Commands are identified by comparing the input words to the current list of available commands and their alternative names.
+			Items are identified by comparing the input words to the available items at the player's current position and their alternative names.
+			Only the latest spoken command and item will be remembered by the system at the end of the function.
+		*/ 
+		latestCommand = "";
+		latestItem = null;
+		ItemPosition[] itemPosToCheck = playerRef.position.AvailableItemPos;
+
+		for (int i = 0; i < latestInputWordList.Length; i++) {				// Iteration through word input
+			for (int i2 = 0; i2 < data.commandList.Length; i2++) {				// Iteration through command list
+				for (int i3 = 0; i3 < data.commandList [i2].names.Length; i3++) {	// Iteration through command names
+					if (data.commandList [i2].names [i3] == latestInputWordList [i]) {	// Check if command name matches matches input word
+						latestCommand = data.commandList [i2].names [0];
+					}
+				}
+			}
+			for (int i2 = 0; i2 < itemPosToCheck.Length; i2++) {				// Iteration through accessible item positions
+				for (int i3 = 0; i3 < itemPosToCheck [i2].heldItem.names.Length; i3++) {	// Iteration through item names
+					if (itemPosToCheck [i2].heldItem.names [i3] == latestInputWordList [i]) {	// Check if item name matches input word.
+						latestItem = itemPosToCheck [i2].heldItem;
+					}
+				}
+			}
+		}
+	}
+
+	private void SendCommand() {
+		/*
+			In the case that both an item and a command were spoken in the previous sentence, the lastest spoken item is sent the latest spoken command.
+		*/ 
+		if (latestItem != null && latestCommand != string.Empty) {
+			latestItem.TakeCommand (latestCommand);
 		}
 	}
 }

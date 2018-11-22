@@ -1,9 +1,28 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ItemScripts\Subclasses\Green.cs">
+    <Files>
+      <File FileName="Assets\Scripts\InputScripts\InputManager.cs" Line="24" Column="1" />
+      <File FileName="Assets\Scripts\SceneDataScripts\SceneData.cs" Line="7" Column="26" />
+      <File FileName="Assets\Scripts\SceneDataScripts\Subclasses\SceneOneData.cs" Line="7" Column="37" />
+      <File FileName="Assets\Scripts\ItemScripts\Item.cs" Line="14" Column="33" />
+      <File FileName="Assets\Scripts\PlayerScripts\Player.cs" Line="16" Column="78" />
+      <File FileName="Assets\Scripts\ItemScripts\ItemPosition.cs" Line="7" Column="24" />
+      <File FileName="Assets\Scripts\PlayerScripts\PlayerPosition.cs" Line="9" Column="110" />
+      <File FileName="Assets\Scripts\CommandScripts\Command.cs" Line="10" Column="63" />
+      <File FileName="Assets\Scripts\CommandScripts\Subclasses\CommandPickUp.cs" Line="6" Column="1" />
+      <File FileName="Assets\Scripts\CommandScripts\Subclasses\CommandMove.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ItemScripts\Subclasses\Blue.cs" Line="16" Column="70" />
+      <File FileName="Assets\Scripts\ItemScripts\Subclasses\Green.cs" Line="16" Column="69" />
+      <File FileName="Assets\Scripts\InputScripts\ExampleStreaming.cs" Line="1" Column="1" />
+      <File FileName="Assets\Watson\Scripts\Services\SpeechToText\v1\SpeechToText.cs" Line="1" Column="1" />
+      <File FileName="Assets\Watson\Scripts\Debug\DebugReactor.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="C:\Users\benne\Documents\Education\Uni\Year 3\Units\RIGPR\InputSystem\Assets\Scripts\InputManager.cs" line="30" column="17" />
+      <Breakpoint file="C:\Users\benne\Documents\Education\Uni\Year 3\Units\RIGPR\InputSystem\Assets\Scripts\ItemScripts\Subclasses\Box.cs" line="15" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

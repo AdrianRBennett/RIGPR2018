@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SceneOneData : SceneData {
-
-	//PUBLIC METHODS
-
-	public SceneOneData()
+	/*
+		Stores data specific to scene one.
+	*/ 
+	void Start()
 	{
 		commandList = new Command[] {
-			new CommandPickUp ()
+			new CommandPickUp (),
+			new CommandMove ()
 		};
 	}
 }
