@@ -2007,13 +2007,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 534669902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0500e8ffde5f6d24c9fbb1f7a4386b60, type: 3}
+  m_Script: {fileID: 11500000, guid: a3c2d249a0980b2439e8fd4373fab3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  maxSpeed: 50
-  speedH: 2
-  speedV: 2
+  lockMovement: 0
+  speed: 10
+  maxSpeed: 20
+  rotateSpeed: 2
 --- !u!114 &534669907
 MonoBehaviour:
   m_ObjectHideFlags: 0
