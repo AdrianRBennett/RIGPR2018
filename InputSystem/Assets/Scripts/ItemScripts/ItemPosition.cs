@@ -7,4 +7,8 @@ public class ItemPosition : MonoBehaviour {
 		A position from which items can be placed and taken.
 	*/ 
 	public Item heldItem = null;
+
+	void Start() {
+		heldItem = GetComponentInChildren<Item> ();
+	}
 }

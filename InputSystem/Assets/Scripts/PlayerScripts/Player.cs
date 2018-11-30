@@ -10,28 +10,13 @@ public class Player : MonoBehaviour {
 	// PUBLIC MEMBERS
 
 	public PlayerPosition position = null;		// A reference to the player's current position.
-
-	// PRIVATE MEMBERS
-
-	private Item heldItem = null;				// A reference to the player's held object.
-
+	public HoldableItem heldItem = null;				// A reference to the player's held object.
 
 	void Start() {
 		/*
 			Initialisation function. 
 		*/ 
 		position = FindObjectOfType<PlayerPosition> ();
-	}
-
-	// PUBLIC METHODS
-
-	public void PickUpItem(ItemPosition posRef) {
-		/*
-			Picks up an item from an item position.
-		*/ 
-		heldItem = posRef.heldItem;
-		heldItem.isHeld = true;
-		posRef.heldItem = null;
 	}
 
 	// PRIVATE METHODS
@@ -48,7 +33,6 @@ public class Player : MonoBehaviour {
 			Places a held item in a new item position.
 		*/ 
 		newPos.heldItem = heldItem;
-		heldItem.isHeld = false;
 		heldItem = null;
 	}
 

@@ -9,6 +9,10 @@ public class Mirror_Script : MonoBehaviour {
     private bool render_Laser = false;
 
     public void ReflectLaser(RaycastHit hit, Vector3 incoming) {
+		/*
+			Reflects an incoming laser accordeing to its raycast data. It checks for collisions of the new laser with other objects and
+			calls relevant functions to allow them to interact.
+		*/ 
         RaycastHit newHit;
         if(Physics.Raycast(hit.point, Vector3.Reflect(incoming,hit.normal), out newHit)){
             if (newHit.collider.gameObject.GetComponent<Mirror_Script>() != null)
@@ -19,14 +23,19 @@ public class Mirror_Script : MonoBehaviour {
                 newHit.collider.gameObject.GetComponent<Activate_On_Trigger>().ChangeMaterial();
             }
         }
-
-        Laser_Cylinder.transform.position = hit.point;
-        Laser_Cylinder.transform.LookAt(newHit.point);
-        Laser_Cylinder.transform.localScale = new Vector3(1.0f, 1.0f, (newHit.distance * 5.0f));
-        Debug.DrawLine(hit.point, newHit.point, Color.blue, 0.1f);
-        render_Laser = true;
-        
+		UpdateLaserCylinder (hit, newHit);
     }
+
+	private void UpdateLaserCylinder(RaycastHit oldHit, RaycastHit newHit) {
+		/*
+			Updates the Laser Cylinder's variables to ensure it renders according to the mirror's new raycast data.
+			It takes the data of the raycast causing the relection and the new raycast data as parameters.
+		*/ 
+		Laser_Cylinder.transform.position = oldHit.point;
+		Laser_Cylinder.transform.LookAt(newHit.point);
+		Laser_Cylinder.transform.localScale = new Vector3(1.0f, 1.0f, (newHit.distance * 5.0f));
+		render_Laser = true;
+	}
 
 	// Use this for initialization
 	void Start () {

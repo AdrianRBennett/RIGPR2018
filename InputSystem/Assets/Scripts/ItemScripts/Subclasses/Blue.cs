@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Blue : Item {
 
-	void Start() {
+	protected override void InitNames() {
 		names = new string[] {
 			"blue"
 		};
 	}
+
+	// PUBLIC METHODS
 
 	public override void TakeCommand(string commandName) {
 		switch (commandName) {

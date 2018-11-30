@@ -7,6 +7,7 @@ public class CommandPickUp : Command {
 	public CommandPickUp() {
 		names = new string[] {
 			"pickup",
+			"pick",
 			"grab",
 			"take"
 		};

@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\CommandScripts\Subclasses\CommandPickUp.cs" />
      <Compile Include="Assets\Scripts\InputScripts\ExampleStreaming.cs" />
      <Compile Include="Assets\Scripts\InputScripts\InputManager.cs" />
+     <Compile Include="Assets\Scripts\ItemScripts\HoldableItem.cs" />
      <Compile Include="Assets\Scripts\ItemScripts\Item.cs" />
      <Compile Include="Assets\Scripts\ItemScripts\ItemPosition.cs" />
      <Compile Include="Assets\Scripts\ItemScripts\Subclasses\Blue.cs" />

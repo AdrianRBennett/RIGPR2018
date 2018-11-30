@@ -11,6 +11,10 @@ public class LaserEmitter_Script : MonoBehaviour {
     public GameObject Laser_Cylinder;
 
     void CreateLaser() {
+		/*
+			Produces a laser in accordance to raycast data. It checks for collisions of the laser with other objects and
+			calls relevant functions to allow them to interact.
+		*/ 
         RaycastHit hit;
         if (Physics.Raycast(Laser_Origin.transform.position, Laser_Origin.transform.forward, out hit)) {
             if (hit.collider.gameObject.GetComponent<Mirror_Script>() != null)
@@ -20,17 +24,17 @@ public class LaserEmitter_Script : MonoBehaviour {
             {
                 hit.collider.gameObject.GetComponent<Activate_On_Trigger>().ChangeMaterial();
             }
-
         }
-        Laser_Cylinder.transform.position = Laser_Origin.transform.position;
-        Laser_Cylinder.transform.LookAt(hit.point);
-        Laser_Cylinder.transform.localScale = new Vector3(1.0f, 1.0f, (hit.distance * 5.0f));
-        Debug.DrawLine(Laser_Origin.transform.position, hit.point, Color.blue, 0.1f);
+		UpdateLaserCylinder (hit);
     }
 
-	// Use this for initialization
-	void Start () {
-		
+	private void UpdateLaserCylinder(RaycastHit hit) {
+		/*
+			Updates the Laser Cylinder's variables to ensure it renders according to the raycast data.
+		*/ 
+		Laser_Cylinder.transform.position = Laser_Origin.transform.position;
+		Laser_Cylinder.transform.LookAt(hit.point);
+		Laser_Cylinder.transform.localScale = new Vector3(1.0f, 1.0f, (hit.distance * 5.0f));
 	}
 	
 	// Update is called once per frame
