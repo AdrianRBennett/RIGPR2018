@@ -7,14 +7,10 @@ public abstract class HoldableItem : Item {
 		An abstract class that all holdable items in the game should inherit from.
 	*/ 
 
-	// PUBLIC METHODS
+	// PROTECTED MEMBERS
 
-	public override void ReturnToBasePos () {
-		/*
-			Returns this item to its base position.
-		*/ 
-		base.ReturnToBasePos ();
-	}
+	protected const string PickUpName = CommandPickUp.identifier;
+	protected const string DropName = CommandDrop.identifier;
 
 	// PROTECTED METHODS
 
@@ -27,6 +23,10 @@ public abstract class HoldableItem : Item {
 			ChangeParentObject (playerRef.transform);
 			ApplyHoldingOffset ();
 		}
+	}
+
+	protected void BeDropped() {
+		ReturnToBasePos ();
 	}
 
 	protected void ChangeParentObject(Transform newParent) {

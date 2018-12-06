@@ -10,17 +10,16 @@ public abstract class Item : MonoBehaviour {
 	// PUBLIC MEMBERS
 
 	public string[] names;									// An array of words that this item can be identified with.
+	public ItemPosition basePos = null;					// An item's initial position.
 
 	// PROTECTED MEMBERS
 
-	protected ItemPosition position = null;					// An item's position.
-	protected ItemPosition basePos = null;					// An item's base position.
-	protected Player playerRef;
+	protected ItemPosition position = null;					// An item's current position.
+	protected Player playerRef;								// A reference to the player object.
 
 	protected void Start() {
 		position = GetComponentInParent<ItemPosition> ();
 		playerRef = FindObjectOfType<Player> ();
-		InitNames ();
 	}
 
 	// PUBLIC METHODS
@@ -33,8 +32,4 @@ public abstract class Item : MonoBehaviour {
 		position = basePos;
 	}
 	public abstract void TakeCommand (string commandName);	// An abstract function to be overridden with a switch case that handles command functionality.
-
-	// PROTECTED METHODS
-
-	protected abstract void InitNames ();
 }

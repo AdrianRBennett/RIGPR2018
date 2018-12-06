@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CommandScripts\Command.cs" />
+     <Compile Include="Assets\Scripts\CommandScripts\Subclasses\CommandDrop.cs" />
      <Compile Include="Assets\Scripts\CommandScripts\Subclasses\CommandMove.cs" />
      <Compile Include="Assets\Scripts\CommandScripts\Subclasses\CommandPickUp.cs" />
      <Compile Include="Assets\Scripts\InputScripts\ExampleStreaming.cs" />

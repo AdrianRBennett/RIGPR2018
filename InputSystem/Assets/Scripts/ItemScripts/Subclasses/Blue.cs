@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class Blue : Item {
 
-	protected override void InitNames() {
+	protected const string MoveName = CommandMove.identifier;
+
+	public Blue() {
 		names = new string[] {
 			"blue"
 		};
 	}
 
-	// PUBLIC METHODS
-
 	public override void TakeCommand(string commandName) {
 		switch (commandName) {
-		case "move":
-			gameObject.transform.SetPositionAndRotation (new Vector3 (2.5f, -1.0f, 0.0f), Quaternion.identity);
+		case MoveName:
+			BeMoved ();
 			break;
 		}
+	}
+
+	// UNIQUE ITEM FUNCTIONALITY
+
+	protected void BeMoved() {
+		gameObject.transform.SetPositionAndRotation (
+			new Vector3 (2.5f, -1.0f, 0.0f),
+			Quaternion.identity);
 	}
 }

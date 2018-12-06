@@ -6,7 +6,6 @@ public class InputManager : MonoBehaviour {
 
 	// PUBLIC MEMBERS
 
-	public string[] latestInputWordList;				// A string array containing the latest spoken words.
 	public UnityEngine.UI.Text customDebugText;			// A debug text object that displays the latest spoken words.
 	public bool customDebugTextOn;						// A flag to control the display of the debug text.
 
@@ -16,6 +15,7 @@ public class InputManager : MonoBehaviour {
 	private SceneData sceneDataRef;						// A reference to the scene data. Needed for current command list so will need to be assigned a new value for each scene.
 	private string latestCommand;						// Holds the latest spoken command.
 	private Item latestItem;							// Holds the latest spoken item.
+	private string[] latestInputWordList;				// A string array containing the latest spoken words.
 	private char[] splittingCharacters = new char[] {	// The input string is split at each instance of these characters.
 		' '
 	};
@@ -77,7 +77,7 @@ public class InputManager : MonoBehaviour {
 			for (int i2 = 0; i2 < data.commandList.Length; i2++) {				// Iteration through command list
 				for (int i3 = 0; i3 < data.commandList [i2].names.Length; i3++) {	// Iteration through command names
 					if (data.commandList [i2].names [i3] == latestInputWordList [i]) {	// Check if command name matches matches input word
-						latestCommand = data.commandList [i2].names [0];
+						latestCommand = data.commandList [i2].GetIdentifier();
 					}
 				}
 			}

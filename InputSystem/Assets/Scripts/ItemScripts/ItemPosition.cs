@@ -10,5 +10,6 @@ public class ItemPosition : MonoBehaviour {
 
 	void Start() {
 		heldItem = GetComponentInChildren<Item> ();
+		heldItem.basePos = this;
 	}
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CommandPickUp : Command {
 
+	public const string identifier = "pickup";
+
 	public CommandPickUp() {
 		names = new string[] {
 			"pickup",
@@ -11,5 +13,9 @@ public class CommandPickUp : Command {
 			"grab",
 			"take"
 		};
+	}
+
+	public override string GetIdentifier() {
+		return identifier;
 	}
 }

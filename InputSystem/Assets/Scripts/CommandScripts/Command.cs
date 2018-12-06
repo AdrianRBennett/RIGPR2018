@@ -8,4 +8,6 @@ public abstract class Command {
 	*/ 
 	// PUBLIC MEMBERS
 	public string[] names;	// An array of words that this command can be identified with.
+
+	public abstract string GetIdentifier ();
 }
