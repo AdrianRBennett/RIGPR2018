@@ -2,143 +2,128 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class MainMenuScript : MonoBehaviour{
 
-    private int menuIndex = 0; // This controls which menu is currently active (0 for none, 1 for start, 2 for options, 3 for quit).
+public class MainMenuScript : MonoBehaviour{  
 
-    private GameObject player;
+    // The screen objects to change their colors during operations.
+    private GameObject OptionScreen;
+    private GameObject StartScreen;
+    private GameObject QuitScreen;
 
-    public GameObject OptionScreen;
-    public GameObject StartScreen;
-    public GameObject QuitScreen;
 
-    private float lockFloat;
-    private bool sliderAct = false;
-    public float minS;
-    public float maxS;
-    private Transform slider;
+    // Image and Animator for the fade in and fade out effects.
+    public Image black;     // The "black screen" image that fades in and out.
+    public Animator anim;   // The Animator which handles both the fade in and fade out animations.
 
+
+    // Slider variables (Slider Functionalities have been moved to a seperate script).
+    private GameObject slider;           // The transform component of the slider object we want to move.
+    
+
+    // Since most important variables are set to private they are initialized here.
     private void Start()
     {
-        player = GameObject.Find("Main Camera");
-        slider = GameObject.Find("Slider").transform;
+        OptionScreen = GameObject.Find("Options Screen");
+        StartScreen = GameObject.Find("Start Screen");
+        QuitScreen = GameObject.Find("Quit Screen");
+        slider = GameObject.Find("Slider");
     }
 
-    private void Update()
-    {
-        if (sliderAct)
-        {
-            slider.localPosition = new Vector3(
-                (-player.transform.rotation.y) + slider.localPosition.x,
-                slider.localPosition.y,
-                slider.localPosition.z);
-            if (slider.localPosition.x <= minS)
-            {
-                slider.localPosition = new Vector3(
-                    minS,
-                    slider.localPosition.y,
-                    slider.localPosition.z);
-            } else if (slider.localPosition.x >= maxS)
-            {
-                slider.localPosition = new Vector3(
-                    maxS,
-                    slider.localPosition.y,
-                    slider.localPosition.z);
-            }
-        }
-    }
-
-
-    private void UpdateScreens()
-    {
-        switch (menuIndex)
-        {
-            case 0:
-                StartScreen.GetComponent<MaterialSwitching>().ScreenOn(false);
-                OptionScreen.GetComponent<MaterialSwitching>().ScreenOn(false);
-                QuitScreen.GetComponent<MaterialSwitching>().ScreenOn(false);
-                break;
-            case 1:
-                StartScreen.GetComponent<MaterialSwitching>().ScreenOn(true);
-                OptionScreen.GetComponent<MaterialSwitching>().ScreenOn(false);
-                QuitScreen.GetComponent<MaterialSwitching>().ScreenOn(false);
-                break;
-            case 2:
-                StartScreen.GetComponent<MaterialSwitching>().ScreenOn(false);
-                OptionScreen.GetComponent<MaterialSwitching>().ScreenOn(true);
-                QuitScreen.GetComponent<MaterialSwitching>().ScreenOn(false);
-                break;
-            case 3:
-                StartScreen.GetComponent<MaterialSwitching>().ScreenOn(false);
-                OptionScreen.GetComponent<MaterialSwitching>().ScreenOn(false);
-                QuitScreen.GetComponent<MaterialSwitching>().ScreenOn(true);
-                break;
-            default:
-                break;
-        }
-    }
 
     public void StartM()
     {
-        if(menuIndex != 1)
+        if(StartScreen.GetComponent<Material_Handling>().mainScreenOn == false)
         {
-            Debug.Log("Readying Game...");
-            menuIndex = 1;
-            
-            UpdateScreens();
+            CloseOthers(StartScreen);
+            StartScreen.GetComponent<Material_Handling>().mainScreenOn = true;
+            Debug.Log("Preparing to launch.");
         } else
         {
-            Debug.Log("Start");
-            menuIndex = 0;
-            UpdateScreens();
-            player.GetComponent<CameraMove>().lockMovement = false;
-            GetComponent<PrimativeInputManager>().enabled = false;
-            GetComponent<MainMenuScript>().enabled = false;
+            StartScreen.GetComponent<Material_Handling>().mainScreenOn = false;
+            Debug.Log("Starting Game");
+            StartCoroutine("SceneChange");
         }
-        
+
     }
+
 
     public void OptionM()
     {
-        if (menuIndex != 2)
+        if (OptionScreen.GetComponent<Material_Handling>().mainScreenOn == false)
         {
-            menuIndex = 2;
-
-            UpdateScreens();
+            CloseOthers(OptionScreen);
+            OptionScreen.GetComponent<Material_Handling>().mainScreenOn = true;
+            Debug.Log("Options open");
         } else
         {
-            menuIndex = 0;
+            OptionScreen.GetComponent<Material_Handling>().mainScreenOn = false;
+            Debug.Log("Options closed");
         }
-
     }
+
 
     public void QuitM()
     {
-        if (menuIndex != 3)
+        if (QuitScreen.GetComponent<Material_Handling>().mainScreenOn == false)
         {
-            menuIndex = 3;
-            
-            UpdateScreens();
+            CloseOthers(QuitScreen);
+            QuitScreen.GetComponent<Material_Handling>().mainScreenOn = true;
         }
         else
         {
-            menuIndex = 0;
-            UpdateScreens();
+            QuitScreen.GetComponent<Material_Handling>().mainScreenOn = false;
             Debug.Log("Quit");
             Application.Quit();
         }
 
     }
 
+
     public void Slider()
     {
-        if (!sliderAct && menuIndex == 2)
+        if (slider.GetComponent<Slider_Script>().active == false
+            && OptionScreen.GetComponent<Material_Handling>().mainScreenOn == true)
         {
-            sliderAct = true;
-        } else if (sliderAct)
+            slider.GetComponent<Slider_Script>().active = true;
+        }
+        else
         {
-            sliderAct = false;
+            slider.GetComponent<Slider_Script>().active = false;
+            Debug.Log(slider.GetComponent<Slider_Script>().CalculatePercentage());
+        }
+
+    }
+
+
+    private void CloseOthers(GameObject exception)
+    {
+        if(exception != OptionScreen)
+        {
+            OptionScreen.GetComponent<Material_Handling>().mainScreenOn = false;
+        }
+        if(exception != StartScreen)
+        {
+            StartScreen.GetComponent<Material_Handling>().mainScreenOn = false;
+        }
+        if(exception != QuitScreen)
+        {
+            QuitScreen.GetComponent<Material_Handling>().mainScreenOn = false;
         }
     }
+
+
+    public IEnumerator SceneChange()
+    {
+        for(int i = 0; i < 5; i++)
+        {
+            yield return new WaitForSecondsRealtime(1);
+            Debug.Log(5 - i);
+        }
+        anim.SetBool("Exit", true);
+        yield return new WaitUntil(() => black.color.a == 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
 }
