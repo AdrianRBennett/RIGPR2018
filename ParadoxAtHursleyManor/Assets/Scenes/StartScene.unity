@@ -306,24 +306,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058ca087e63a35242b04ef2a0bde38a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  black: {fileID: 1578327326}
+  blackScreen: {fileID: 1578327326}
   anim: {fileID: 1578327328}
 --- !u!1 &143712989 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100006, guid: cd8f82af9c8ee8d40ab5c7b9297192c3,
     type: 3}
   m_PrefabInternal: {fileID: 676799004}
---- !u!114 &143712993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 143712989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77dd3bc262ce7804b8724fbdf36b5646, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &143712994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -454,7 +443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blankScreen: {fileID: 2100000, guid: 24db1932b414b93479ed34b5a9edee95, type: 2}
   mainScreen: {fileID: 2100000, guid: 707dcef63bf589b40a54f84248d28330, type: 2}
-  highlightScreen: {fileID: 2100000, guid: 690efef30624e6f4181f3d59ab995d18, type: 2}
+  highlightScreen: {fileID: 2100000, guid: 65fdc569c6567bd488a2c8dbfd093d4f, type: 2}
   mainScreenOn: 0
 --- !u!1001 &676799004
 Prefab:
@@ -764,7 +753,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1221558601}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: -3.14, y: 8.26, z: 5.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1193,7 +1182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blankScreen: {fileID: 2100000, guid: 24db1932b414b93479ed34b5a9edee95, type: 2}
   mainScreen: {fileID: 2100000, guid: 06a09452b61dc844aa24cb7ba71e6433, type: 2}
-  highlightScreen: {fileID: 2100000, guid: 690efef30624e6f4181f3d59ab995d18, type: 2}
+  highlightScreen: {fileID: 2100000, guid: 65fdc569c6567bd488a2c8dbfd093d4f, type: 2}
   mainScreenOn: 0
 --- !u!4 &1831041175 stripped
 Transform:
@@ -1371,5 +1360,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blankScreen: {fileID: 2100000, guid: 24db1932b414b93479ed34b5a9edee95, type: 2}
   mainScreen: {fileID: 2100000, guid: 86dfa76813fc6eb4f8e0a6b46f459a7d, type: 2}
-  highlightScreen: {fileID: 2100000, guid: 690efef30624e6f4181f3d59ab995d18, type: 2}
+  highlightScreen: {fileID: 2100000, guid: 65fdc569c6567bd488a2c8dbfd093d4f, type: 2}
   mainScreenOn: 0

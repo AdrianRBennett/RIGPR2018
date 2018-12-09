@@ -70,7 +70,6 @@
     <Compile Include="Assets\Scripts\Laser_Scripts\Mirror_Script.cs" />
     <Compile Include="Assets\Scripts\Menu_Scripts\MainMenuScript.cs" />
     <Compile Include="Assets\Scripts\Menu_Scripts\Material_Handling.cs" />
-    <Compile Include="Assets\Scripts\Menu_Scripts\MaterialSwitching.cs" />
     <Compile Include="Assets\Scripts\Menu_Scripts\PrimativeInputManager.cs" />
     <Compile Include="Assets\Scripts\Menu_Scripts\Slider_Script.cs" />
     <Compile Include="Assets\Scripts\Pause_Scripts\Pause_Input_Script.cs" />
