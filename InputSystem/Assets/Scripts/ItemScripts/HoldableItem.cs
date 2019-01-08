@@ -14,7 +14,7 @@ public abstract class HoldableItem : Item {
 
 	// PROTECTED METHODS
 
-	protected void BePickedUp() {
+	protected void BePickedUp() {						// "Pick Up" Command Functionality
 		if (playerRef.heldItem == null) {
 			playerRef.heldItem = this;
 			position.heldItem = null;
@@ -25,13 +25,28 @@ public abstract class HoldableItem : Item {
 		}
 	}
 
-	protected void BeDropped() {
-		ReturnToBasePos ();
+	protected void BeDropped() {						// "Drop" Command Functionality
+		if (basePos.heldItem == null) {
+			ReturnToBasePos ();
+			playerRef.heldItem = null;
+			ChangeParentObject (basePos.transform);
+		} else {
+			Debug.Log ("This item cannot return to its base position as its base position is holding another item.");
+		}
+	}
+
+	public override void BePlaced (ItemPosition newPos)	// "Place" Command Functionality
+	{
+		playerRef.heldItem = null;
+		position = newPos;
+		newPos.heldItem = this;
+
+		ChangeParentObject (newPos.transform);
 	}
 
 	protected void ChangeParentObject(Transform newParent) {
 		/*
-			This function changes the item's parent. The offset transform is necessary as the SetParent function changes the item's trnasform
+			This function changes the item's parent transform. The temporary transform is necessary as the SetParent function changes the item's transform
 			such that there is no movement in world space. This solution maintains the local space transform whilst moving the item in world space.
 		*/ 
 		Vector3 tempLocalPos = transform.localPosition;
@@ -43,6 +58,9 @@ public abstract class HoldableItem : Item {
 	}
 
 	protected void ApplyHoldingOffset() {
+		/*
+			Applies an offset to the item's position so that it is stays at a certain distance from its holder along the its forward axis.
+		*/ 
 		transform.position += Vector3.forward * 2;
 	}
 }

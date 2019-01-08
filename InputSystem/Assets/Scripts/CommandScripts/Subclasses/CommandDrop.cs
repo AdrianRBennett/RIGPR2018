@@ -8,7 +8,7 @@ public class CommandDrop : Command {
 
 	public CommandDrop() {
 		names = new string[] {
-			"drop"	
+			identifier	
 		};
 	}
 

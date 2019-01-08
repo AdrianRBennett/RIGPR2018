@@ -8,7 +8,7 @@ public class CommandMove : Command {
 
 	public CommandMove() {
 		names = new string[] {
-			"move"
+			identifier
 		};
 	}
 

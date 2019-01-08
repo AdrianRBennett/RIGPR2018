@@ -20,6 +20,7 @@ public abstract class Item : MonoBehaviour {
 	protected void Start() {
 		position = GetComponentInParent<ItemPosition> ();
 		playerRef = FindObjectOfType<Player> ();
+		InitNames ();
 	}
 
 	// PUBLIC METHODS
@@ -32,4 +33,11 @@ public abstract class Item : MonoBehaviour {
 		position = basePos;
 	}
 	public abstract void TakeCommand (string commandName);	// An abstract function to be overridden with a switch case that handles command functionality.
+	public virtual void BePlaced (ItemPosition newPos)	{	// Should be overidden by placeable objects with placement functionality. 	
+		Debug.Log("No placement functionality for this Item");
+	}
+
+	// PROTECTED METHODS
+
+	protected abstract void InitNames ();					// Initialises the name list of the Item.
 }

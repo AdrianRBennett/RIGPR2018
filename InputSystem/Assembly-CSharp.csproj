@@ -57,12 +57,15 @@
      <Compile Include="Assets\Scripts\CommandScripts\Subclasses\CommandDrop.cs" />
      <Compile Include="Assets\Scripts\CommandScripts\Subclasses\CommandMove.cs" />
      <Compile Include="Assets\Scripts\CommandScripts\Subclasses\CommandPickUp.cs" />
+     <Compile Include="Assets\Scripts\CommandScripts\Subclasses\CommandPlace.cs" />
      <Compile Include="Assets\Scripts\InputScripts\ExampleStreaming.cs" />
      <Compile Include="Assets\Scripts\InputScripts\InputManager.cs" />
+     <Compile Include="Assets\Scripts\ItemPositionScripts\ItemPosition.cs" />
+     <Compile Include="Assets\Scripts\ItemPositionScripts\Subclasses\PlaceableItemPosition.cs" />
      <Compile Include="Assets\Scripts\ItemScripts\HoldableItem.cs" />
      <Compile Include="Assets\Scripts\ItemScripts\Item.cs" />
-     <Compile Include="Assets\Scripts\ItemScripts\ItemPosition.cs" />
      <Compile Include="Assets\Scripts\ItemScripts\Subclasses\Blue.cs" />
+     <Compile Include="Assets\Scripts\ItemScripts\Subclasses\Gears\Gear.cs" />
      <Compile Include="Assets\Scripts\ItemScripts\Subclasses\Green.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\PlayerPosition.cs" />

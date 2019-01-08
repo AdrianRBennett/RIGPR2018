@@ -16,7 +16,15 @@ public class Player : MonoBehaviour {
 		/*
 			Initialisation function. 
 		*/ 
-		position = FindObjectOfType<PlayerPosition> ();
+		if (GetComponentInParent<PlayerPosition> () != null) {
+			position = GetComponentInParent<PlayerPosition> ();
+		} else {
+			Debug.Log ("The player is not stationed in a player position");
+		}
+
+		if (GetComponentsInChildren<HoldableItem> () != null) {
+			heldItem = GetComponentInChildren<HoldableItem> ();
+		}
 	}
 
 	// PRIVATE METHODS

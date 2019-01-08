@@ -1,22 +1,26 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ItemScripts\HoldableItem.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SceneDataScripts\Subclasses\SceneOneData.cs">
     <Files>
       <File FileName="Assets\Scripts\PlayerScripts\Player.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\PlayerScripts\PlayerPosition.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ItemScripts\Item.cs" Line="34" Column="152" />
-      <File FileName="Assets\Scripts\ItemScripts\ItemPosition.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ItemScripts\HoldableItem.cs" Line="18" Column="21" />
+      <File FileName="Assets\Scripts\ItemScripts\Item.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ItemScripts\HoldableItem.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\InputScripts\InputManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CommandScripts\Subclasses\CommandPickUp.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ItemScripts\Subclasses\Green.cs" Line="29" Column="2" />
-      <File FileName="Assets\Scripts\ItemScripts\Subclasses\Blue.cs" Line="1" Column="26" />
+      <File FileName="Assets\Scripts\ItemPositionScripts\ItemPosition.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ItemPositionScripts\Subclasses\PlaceableItemPosition.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ItemScripts\Subclasses\Green.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ItemScripts\Subclasses\Blue.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ItemScripts\Subclasses\Gears\Gear.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CommandScripts\Subclasses\CommandPlace.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SceneDataScripts\Subclasses\SceneOneData.cs" Line="12" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="C:\Users\benne\Documents\Education\Uni\Year 3\Units\RIGPR\InputSystem\Assets\Scripts\InputManager.cs" line="30" column="17" />
       <Breakpoint file="C:\Users\benne\Documents\Education\Uni\Year 3\Units\RIGPR\InputSystem\Assets\Scripts\ItemScripts\Subclasses\Box.cs" line="15" column="1" />
+      <Breakpoint file="C:\Users\benne\Documents\Education\Uni\Year 3\Units\RIGPR\InputSystem\Assets\Scripts\InputScripts\InputManager.cs" line="83" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

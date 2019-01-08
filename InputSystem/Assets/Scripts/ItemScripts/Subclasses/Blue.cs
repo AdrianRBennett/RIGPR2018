@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class Blue : Item {
 
+	// PROTECTED MEMBERS
+
 	protected const string MoveName = CommandMove.identifier;
 
-	public Blue() {
-		names = new string[] {
-			"blue"
-		};
-	}
+	// PUBLIC METHODS
 
 	public override void TakeCommand(string commandName) {
 		switch (commandName) {
@@ -18,6 +16,14 @@ public class Blue : Item {
 			BeMoved ();
 			break;
 		}
+	}
+
+	// PROTECTED METHODS
+
+	protected override void InitNames() {
+		names = new string[] {
+			"blue"
+		};
 	}
 
 	// UNIQUE ITEM FUNCTIONALITY

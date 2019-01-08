@@ -10,7 +10,8 @@ public class SceneOneData : SceneData {
 	{
 		commandList = new Command[] {
 			new CommandPickUp (),
-			new CommandMove ()
+			new CommandMove (),
+			new CommandPlace ()
 		};
 	}
 }

@@ -15,16 +15,21 @@ public class InputManager : MonoBehaviour {
 	private SceneData sceneDataRef;						// A reference to the scene data. Needed for current command list so will need to be assigned a new value for each scene.
 	private string latestCommand;						// Holds the latest spoken command.
 	private Item latestItem;							// Holds the latest spoken item.
+	private ItemPosition latestItemPos;					
 	private string[] latestInputWordList;				// A string array containing the latest spoken words.
 	private char[] splittingCharacters = new char[] {	// The input string is split at each instance of these characters.
 		' '
 	};
 
+	private bool DEBUGVAR = false;
+
 	void Start () {
 		/*
 			Initialisation function. 
 		*/ 
-		latestInputWordList = new string[] { "default" };
+		latestInputWordList = new string[] { 
+			"default"
+		};
 		playerRef = FindObjectOfType<Player> ();
 		sceneDataRef = FindObjectOfType<SceneData> ();
 	}
@@ -38,6 +43,11 @@ public class InputManager : MonoBehaviour {
 			for (int i = 0; i < latestInputWordList.Length; i++) {
 				customDebugText.text += latestInputWordList [i] + " ";
 			}
+		}
+			
+		if (DEBUGVAR == false) {
+			ProcessInput ("place a");
+			DEBUGVAR = true;
 		}
 	}
 
@@ -69,34 +79,62 @@ public class InputManager : MonoBehaviour {
 			Items are identified by comparing the input words to the available items at the player's current position and their alternative names.
 			Only the latest spoken command and item will be remembered by the system at the end of the function.
 		*/ 
+
 		latestCommand = "";
 		latestItem = null;
+		latestItemPos = null;
 		ItemPosition[] itemPosToCheck = playerRef.position.AvailableItemPos;
 
 		for (int i = 0; i < latestInputWordList.Length; i++) {				// Iteration through word input
 			for (int i2 = 0; i2 < data.commandList.Length; i2++) {				// Iteration through command list
 				for (int i3 = 0; i3 < data.commandList [i2].names.Length; i3++) {	// Iteration through command names
 					if (data.commandList [i2].names [i3] == latestInputWordList [i]) {	// Check if command name matches matches input word
-						latestCommand = data.commandList [i2].GetIdentifier();
+						SetLatestCommand(data.commandList [i2].GetIdentifier());
 					}
 				}
 			}
 			for (int i2 = 0; i2 < itemPosToCheck.Length; i2++) {				// Iteration through accessible item positions
-				for (int i3 = 0; i3 < itemPosToCheck [i2].heldItem.names.Length; i3++) {	// Iteration through item names
-					if (itemPosToCheck [i2].heldItem.names [i3] == latestInputWordList [i]) {	// Check if item name matches input word.
-						latestItem = itemPosToCheck [i2].heldItem;
+				for (int i3 = 0; i3 < itemPosToCheck [i2].GetNames ().Length; i3++) {
+					if (itemPosToCheck [i2].GetNames () [i3] == latestInputWordList [i] && itemPosToCheck [i2].canBePlacedIn) {
+						SetLatestItemPos (itemPosToCheck [i2]);
+					}
+				}
+				if (itemPosToCheck [i2].heldItem != null) {
+					for (int i3 = 0; i3 < itemPosToCheck [i2].heldItem.names.Length; i3++) {	// Iteration through item names
+						if (itemPosToCheck [i2].heldItem.names [i3] == latestInputWordList [i]) {	// Check if item name matches input word.
+							SetLatestItem (itemPosToCheck [i2].heldItem);
+						}
 					}
 				}
 			}
 		}
 	}
 
+	private void SetLatestCommand(string command) {
+		latestCommand = command;
+	}
+
+	private void SetLatestItem(Item item) {
+		latestItem = item;
+		latestItemPos = null;
+	}
+
+	private void SetLatestItemPos(ItemPosition itemPos) {
+		latestItemPos = itemPos;
+		latestItem = null;
+	}
+
 	private void SendCommand() {
 		/*
-			In the case that both an item and a command were spoken in the previous sentence, the lastest spoken item is sent the latest spoken command.
-		*/ 
+			In the case that both an item or item position and a command were spoken in the previous sentence, the lastest spoken item or item position is sent the latest spoken command.
+		*/
 		if (latestItem != null && latestCommand != string.Empty) {
 			latestItem.TakeCommand (latestCommand);
+		} else if (latestItemPos != null && latestItemPos.heldItem == null && latestCommand == CommandPlace.identifier) {
+			if (playerRef.heldItem != null)
+				playerRef.heldItem.BePlaced (latestItemPos);
+			else
+				Debug.Log ("The player cannot place an item when they are holding nothing.");
 		}
 	}
 }
