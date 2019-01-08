@@ -46,7 +46,7 @@ public class InputManager : MonoBehaviour {
 		}
 			
 		if (DEBUGVAR == false) {
-			ProcessInput ("place a");
+			ProcessInput ("place c");
 			DEBUGVAR = true;
 		}
 	}

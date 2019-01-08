@@ -40,7 +40,7 @@ public abstract class HoldableItem : Item {
 		playerRef.heldItem = null;
 		position = newPos;
 		newPos.heldItem = this;
-
+		RemoveHoldingOffset ();
 		ChangeParentObject (newPos.transform);
 	}
 
@@ -59,8 +59,15 @@ public abstract class HoldableItem : Item {
 
 	protected void ApplyHoldingOffset() {
 		/*
-			Applies an offset to the item's position so that it is stays at a certain distance from its holder along the its forward axis.
+			Applies an offset to the item's position so that it is stays at a certain distance from its parent along the its forward axis.
 		*/ 
 		transform.position += Vector3.forward * 2;
+	}
+
+	protected void RemoveHoldingOffset() {
+		/*
+			Removes the item's forward vector positional offset from its parent.
+		*/ 
+		transform.localPosition = Vector3.zero;
 	}
 }
