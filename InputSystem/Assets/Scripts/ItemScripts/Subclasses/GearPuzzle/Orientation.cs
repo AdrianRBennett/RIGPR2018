@@ -22,7 +22,7 @@ public class Orientation {
 	// PUBLIC METHODS
 
 	public Orientation() {
-		yOrientation = OrientState.state4;
-		zOrientation = OrientState.state4;
+		yOrientation = OrientState.state1;
+		zOrientation = OrientState.state1;
 	}
 }

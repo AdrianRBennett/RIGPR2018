@@ -46,7 +46,7 @@ public class InputManager : MonoBehaviour {
 		}
 			
 		if (DEBUGVAR == false) {
-			ProcessInput ("flip gear");
+			ProcessInput ("rotate gear");
 			DEBUGVAR = true;
 		}
 	}

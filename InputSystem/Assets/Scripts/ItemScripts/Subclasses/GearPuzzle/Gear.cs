@@ -11,6 +11,7 @@ public class Gear : HoldableItem {
 	// PROTECTED MEMBERS
 
 	protected const string FlipName = CommandFlip.identifier;
+	protected const string RotateName = CommandRotate.identifier;
 
 	// PUBLIC METHODS
 
@@ -19,6 +20,9 @@ public class Gear : HoldableItem {
 		switch (commandName) {
 		case FlipName:
 			BeFlipped ();
+			break;
+		case RotateName:
+			BeRotated ();
 			break;
 		}
 	}
@@ -33,10 +37,28 @@ public class Gear : HoldableItem {
 	}
 
 	protected void BeFlipped() {
-		if (Orient.yOrientation != (Orientation.OrientState)((Orientation.noOfStates - 1) * Orientation.stateOffset)) {
-			Orient.yOrientation += Orientation.stateOffset;
+		ChangeOrientation (ref Orient.yOrientation);
+
+		transform.localEulerAngles = new Vector3(
+			transform.localEulerAngles.x,
+			(float)Orient.yOrientation,
+			transform.localEulerAngles.z);
+	}
+
+	protected void BeRotated() {
+		ChangeOrientation (ref Orient.zOrientation);
+
+		transform.localEulerAngles = new Vector3(
+			transform.localEulerAngles.x,
+			transform.localEulerAngles.y,
+			(float)Orient.zOrientation);
+	}
+
+	protected void ChangeOrientation(ref Orientation.OrientState orient) {
+		if (orient != (Orientation.OrientState)((Orientation.noOfStates - 1) * Orientation.stateOffset)) {
+			orient += Orientation.stateOffset;
 		} else {
-			Orient.yOrientation = Orientation.OrientState.state1;
+			orient = Orientation.OrientState.state1;
 		}
 	}
 }
