@@ -12,6 +12,19 @@ public abstract class HoldableItem : Item {
 	protected const string PickUpName = CommandPickUp.identifier;
 	protected const string DropName = CommandDrop.identifier;
 
+	// PUBLIC METHODS
+
+	public override void TakeCommand(string commandName) {
+		switch (commandName) {
+		case PickUpName:
+			BePickedUp ();
+			break;
+		case DropName:
+			BeDropped ();
+			break;
+		}
+	}
+
 	// PROTECTED METHODS
 
 	protected void BePickedUp() {						// "Pick Up" Command Functionality

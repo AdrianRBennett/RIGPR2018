@@ -11,7 +11,8 @@ public class SceneOneData : SceneData {
 		commandList = new Command[] {
 			new CommandPickUp (),
 			new CommandMove (),
-			new CommandPlace ()
+			new CommandPlace (),
+			new CommandFlip ()
 		};
 	}
 }

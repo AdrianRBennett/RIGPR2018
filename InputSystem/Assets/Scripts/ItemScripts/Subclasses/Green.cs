@@ -11,15 +11,10 @@ public class Green : HoldableItem {
 	// PUBLIC METHODS
 
 	public override void TakeCommand(string commandName) {
+		base.TakeCommand (commandName);
 		switch (commandName) {
 		case MoveName:
 			BeMoved ();
-			break;
-		case PickUpName:
-			BePickedUp ();
-			break;
-		case DropName:
-			BeDropped ();
 			break;
 		}
 	}
