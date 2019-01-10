@@ -21,6 +21,10 @@ public class ItemPosition : MonoBehaviour {
 		};
 	}		
 
+	public virtual bool CheckItemFitsPosition() {
+		return false;
+	}
+
 	// PROTECTED METHODS
 
 	protected void Start() {

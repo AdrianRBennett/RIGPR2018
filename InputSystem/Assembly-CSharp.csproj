@@ -68,7 +68,6 @@
      <Compile Include="Assets\Scripts\ItemScripts\Item.cs" />
      <Compile Include="Assets\Scripts\ItemScripts\Subclasses\Blue.cs" />
      <Compile Include="Assets\Scripts\ItemScripts\Subclasses\GearPuzzle\Gear.cs" />
-     <Compile Include="Assets\Scripts\ItemScripts\Subclasses\GearPuzzle\Orientation.cs" />
      <Compile Include="Assets\Scripts\ItemScripts\Subclasses\Green.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\PlayerPosition.cs" />

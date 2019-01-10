@@ -46,7 +46,7 @@ public class InputManager : MonoBehaviour {
 		}
 			
 		if (DEBUGVAR == false) {
-			ProcessInput ("rotate gear");
+			ProcessInput ("place a");
 			DEBUGVAR = true;
 		}
 	}
@@ -128,10 +128,8 @@ public class InputManager : MonoBehaviour {
 		/*
 			In the case that both an item or item position and a command were spoken in the previous sentence, the lastest spoken item or item position is sent the latest spoken command.
 		*/
-		if (latestItem == null && latestCommand != string.Empty && playerRef.heldItem != null) {	// Command sent to player's held item.
-			playerRef.heldItem.TakeCommand (latestCommand);
 
-		} else if (latestItem != null && latestCommand != string.Empty) {							// Command sent to non-held item.
+		if (latestItem != null && latestCommand != string.Empty) {							// Command sent to non-held item.
 			latestItem.TakeCommand (latestCommand);
 
 		} else if (latestItemPos != null && latestItemPos.heldItem == null && latestCommand == CommandPlace.identifier) {	// Place command sent to item position.
@@ -139,6 +137,9 @@ public class InputManager : MonoBehaviour {
 				playerRef.heldItem.BePlaced (latestItemPos);
 			else
 				Debug.Log ("The player cannot place an item when they are holding nothing.");
+			
+		} else if (latestItem == null && latestCommand != string.Empty && playerRef.heldItem != null) {	// Command sent to player's held item.
+			playerRef.heldItem.TakeCommand (latestCommand);
 		}
 	}
 }

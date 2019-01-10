@@ -13,10 +13,14 @@ public class PlaceableItemPosition : ItemPosition {
 	public override string[] GetNames() {
 		return names;
 	}
+		
+	public override bool CheckItemFitsPosition() {
+		return true;
+	}
 
 	// PRIVATE METHODS
 
-	private new void Start() {
+	protected new void Start() {
 		base.Start ();
 		canBePlacedIn = true;
 	}

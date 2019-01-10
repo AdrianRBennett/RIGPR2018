@@ -6,12 +6,28 @@ public class Gear : HoldableItem {
 
 	// PUBLIC MEMBERS
 
-	Orientation Orient = new Orientation();
+	public Orientation requiredYOrient;
+	public Orientation requiredZOrient;
+	public string gearID = "";
 
 	// PROTECTED MEMBERS
 
 	protected const string FlipName = CommandFlip.identifier;
 	protected const string RotateName = CommandRotate.identifier;
+
+	protected Orientation yOrient = new Orientation();
+	protected Orientation zOrient = new Orientation();
+	protected const int orientStateOffset = 90;
+	protected const int noOfOrientStates = 4;
+
+	// PUBLIC ENUMS
+
+	public enum Orientation {
+		state1 = 0,
+		state2 = 90,
+		state3 = 180,
+		state4 = 270
+	};
 
 	// PUBLIC METHODS
 
@@ -27,6 +43,14 @@ public class Gear : HoldableItem {
 		}
 	}
 
+	public override void BePlaced(ItemPosition newPos) {
+		if (yOrient == requiredYOrient &&
+			zOrient == requiredZOrient &&
+			gearID == newPos.GetNames()[0]	) {
+			base.BePlaced (newPos);
+		}
+	}
+
 	// PROTECTED METHODS
 
 	protected override void InitNames() {
@@ -37,28 +61,28 @@ public class Gear : HoldableItem {
 	}
 
 	protected void BeFlipped() {
-		ChangeOrientation (ref Orient.yOrientation);
+		ChangeOrientation (ref yOrient);
 
 		transform.localEulerAngles = new Vector3(
 			transform.localEulerAngles.x,
-			(float)Orient.yOrientation,
+			(float)yOrient,
 			transform.localEulerAngles.z);
 	}
 
 	protected void BeRotated() {
-		ChangeOrientation (ref Orient.zOrientation);
+		ChangeOrientation (ref zOrient);
 
 		transform.localEulerAngles = new Vector3(
 			transform.localEulerAngles.x,
 			transform.localEulerAngles.y,
-			(float)Orient.zOrientation);
+			(float)zOrient);
 	}
 
-	protected void ChangeOrientation(ref Orientation.OrientState orient) {
-		if (orient != (Orientation.OrientState)((Orientation.noOfStates - 1) * Orientation.stateOffset)) {
-			orient += Orientation.stateOffset;
+	protected void ChangeOrientation(ref Orientation orient) {
+		if (orient != (Orientation)((noOfOrientStates - 1) * orientStateOffset)) {
+			orient += orientStateOffset;
 		} else {
-			orient = Orientation.OrientState.state1;
+			orient = Orientation.state1;
 		}
 	}
 }
