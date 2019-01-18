@@ -22,7 +22,7 @@ MonoBehaviour:
   m_MinSize: {x: 579, y: 450}
   m_MaxSize: {x: 14002, y: 14021}
   vertical: 1
-  controlID: 94
+  controlID: 105
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_MinSize: {x: 579, y: 450}
   m_MaxSize: {x: 14002, y: 14021}
   vertical: 0
-  controlID: 95
+  controlID: 106
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_MinSize: {x: 302, y: 450}
   m_MaxSize: {x: 10000, y: 14021}
   vertical: 1
-  controlID: 96
+  controlID: 107
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,11 +169,11 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1480
-    height: 658
+    height: 676
   m_MinSize: {x: 302, y: 200}
   m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 72
+  controlID: 56
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -191,7 +191,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1223
-    height: 658
+    height: 676
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 2}
@@ -225,17 +225,17 @@ MonoBehaviour:
     x: 0
     y: 92
     width: 1221
-    height: 637
+    height: 655
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 2316.7920335987924
+  lastFramingTime: 1335.0603344665562
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -89.72631, y: 8.608498, z: 11.347085}
+    m_Target: {x: 43.80483, y: 5.5183134, z: -6.2613015}
     speed: 2
-    m_Value: {x: -89.72631, y: 8.608498, z: 11.347085}
+    m_Value: {x: 43.80483, y: 5.5183134, z: -6.2613015}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -263,13 +263,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.09705781, y: -0.7531777, z: 0.11413277, w: 0.6405287}
+    m_Target: {x: 0.00046217273, y: 0.99891007, z: 0.010064721, w: -0.04557692}
     speed: 2
-    m_Value: {x: 0.09705781, y: -0.7531777, z: 0.11413277, w: 0.6405287}
+    m_Value: {x: 0.00046217273, y: 0.99891007, z: 0.010064721, w: -0.04557692}
   m_Size:
-    m_Target: 4.245234
+    m_Target: 0.08434701
     speed: 2
-    m_Value: 4.245234
+    m_Value: 0.08434701
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -382,7 +382,7 @@ MonoBehaviour:
     x: 1223
     y: 0
     width: 257
-    height: 658
+    height: 676
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 11}
@@ -413,13 +413,13 @@ MonoBehaviour:
     x: 1225
     y: 92
     width: 253
-    height: 637
+    height: 655
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 100}
-    m_SelectedIDs: a2480000
-    m_LastClickedID: 0
-    m_ExpandedIDs: e6fbffff00000000
+    scrollPos: {x: 0, y: 640}
+    m_SelectedIDs: 08fbffff
+    m_LastClickedID: -1272
+    m_ExpandedIDs: e6fbffff00000000782000002622000076230000cc230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -458,11 +458,11 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 658
+    y: 676
     width: 1480
-    height: 289
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
+    height: 271
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -490,9 +490,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 750
+    y: 768
     width: 1478
-    height: 268
+    height: 250
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -506,7 +506,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Materials/IBM_GardenArea_FloorPlane
+    - Assets/Objects/Main_Hall/IBM_CentralHall_SmallWall
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -518,7 +518,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: b6280000
     m_LastClickedID: 10422
-    m_ExpandedIDs: 000000009a100000e61200005a130000f8130000da1500005a17000078170000fc1700006a190000381a0000d41b0000381c00008e1c0000081e0000841e0000ac1f00006a4800006c4800006e48000070480000
+    m_ExpandedIDs: 000000009a1000005a130000f8130000521700005a17000078170000fc1700006a190000381a0000481a0000d61b00003a1c0000901c00004c1d00000a1e0000861e0000ae1f0000c0480000c2480000c4480000c6480000c8480000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -543,24 +543,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 340}
-    m_SelectedIDs: a2480000
-    m_LastClickedID: 18594
-    m_ExpandedIDs: ffffffff000000009a1000005a130000f8130000521700005a17000078170000fc1700006a190000381a0000481a0000d41b0000381c00008e1c00004a1d0000081e0000841e0000ac1f00006a4800006c4800006e480000704800007e480000ffffff7f
+    scrollPos: {x: 0, y: 120}
+    m_SelectedIDs: 08fbffff
+    m_LastClickedID: 0
+    m_ExpandedIDs: ffffffff000000009a1000005a130000f81300005a1700007817000096170000fc1700006a190000481a0000d61b00003a1c0000901c0000a01c00004c1d0000a81d0000061e00000a1e0000861e00000c1f0000221f0000ae1f0000c0480000c2480000c4480000c6480000c8480000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: IBM_Garden_Area_Floor_material
-      m_OriginalName: IBM_Garden_Area_Floor_material
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 7334
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 4
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 12}
     m_SearchString: 
@@ -571,8 +571,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: a2480000
-    m_LastClickedInstanceID: 18594
+    m_SelectedInstanceIDs: 08fbffff
+    m_LastClickedInstanceID: -1272
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
