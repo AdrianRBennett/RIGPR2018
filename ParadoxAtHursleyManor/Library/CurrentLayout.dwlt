@@ -105,8 +105,8 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 579, y: 450}
-  m_MaxSize: {x: 14002, y: 14021}
+  m_MinSize: {x: 583, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
   vertical: 1
   controlID: 28
 --- !u!114 &6
@@ -129,8 +129,8 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 947
-  m_MinSize: {x: 579, y: 450}
-  m_MaxSize: {x: 14002, y: 14021}
+  m_MinSize: {x: 583, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
   controlID: 29
 --- !u!114 &7
@@ -153,8 +153,8 @@ MonoBehaviour:
     y: 0
     width: 1546
     height: 947
-  m_MinSize: {x: 302, y: 450}
-  m_MaxSize: {x: 10000, y: 14021}
+  m_MinSize: {x: 306, y: 492}
+  m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
   controlID: 30
 --- !u!114 &8
@@ -177,8 +177,8 @@ MonoBehaviour:
     y: 0
     width: 1546
     height: 560
-  m_MinSize: {x: 302, y: 200}
-  m_MaxSize: {x: 8002, y: 4021}
+  m_MinSize: {x: 306, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
   controlID: 31
 --- !u!114 &9
@@ -396,9 +396,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -102.1616, y: 4.7404747, z: 18.44125}
+    m_Target: {x: -105.8431, y: 2.8711033, z: 19.829023}
     speed: 2
-    m_Value: {x: -102.1616, y: 4.7404747, z: 18.44125}
+    m_Value: {x: -105.8431, y: 2.8711033, z: 19.829023}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -426,13 +426,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.0013221666, y: 0.42308563, z: 0.00062129175, w: -0.90608853}
+    m_Target: {x: -0.051619735, y: -0.9389931, z: 0.16219379, w: -0.29886568}
     speed: 2
-    m_Value: {x: 0.0013221666, y: 0.42308563, z: 0.00062129175, w: -0.90608853}
+    m_Value: {x: -0.051619735, y: -0.9389931, z: 0.16219379, w: -0.29886568}
   m_Size:
-    m_Target: 7.406233
+    m_Target: 5.836386
     speed: 2
-    m_Value: 7.406233
+    m_Value: 5.836386
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -554,10 +554,10 @@ MonoBehaviour:
     height: 539
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a2550000
-    m_LastClickedID: 0
-    m_ExpandedIDs: e6fbffff00000000
+    scrollPos: {x: 0, y: 630}
+    m_SelectedIDs: 90f8ffff
+    m_LastClickedID: -1904
+    m_ExpandedIDs: e6fbffff00000000f0290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -618,7 +618,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Mechanic Props/IBM_Pot/Pot_2
+    - Assets/Materials/IBM_Wood_Crate/Assets
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -630,7 +630,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: b6280000
     m_LastClickedID: 10422
-    m_ExpandedIDs: 000000009a100000da100000a6120000a21400009a150000121600007c160000ba160000521a0000861a00002c1b0000821c00005a1d00000a1e0000982000001a2100009e210000ae2200007e230000862300000c240000d42400006e26000020550000225500002455000026550000285500002a550000
+    m_ExpandedIDs: 000000009a100000da100000ac120000aa140000a61500001e16000088160000601a0000941a0000401b00009a1c0000761d0000921d00002a1e0000bc200000e820000048210000d6210000ea220000bc230000c42300004a24000012250000ae2600007455000076550000785500007a5500007c5500007e550000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -655,10 +655,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 808}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff000000009a100000da100000a6120000a21400009a150000121600007c160000521a0000861a00002c1b0000821c00005a1d00000a1e0000982000001a2100009e210000ae2200007e230000862300000c240000d42400006e26000020550000225500002455000026550000285500002a550000aa550000b4550000
+    m_ExpandedIDs: ffffffff000000009a100000da100000ac120000aa140000a61500001e16000088160000601a0000941a0000401b00009a1c0000761d0000921d00002a1e0000bc200000e820000048210000d6210000ea220000bc230000c42300004a24000012250000ae2600007455000076550000785500007a5500007c5500007e550000a0550000a2550000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
