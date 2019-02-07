@@ -64,10 +64,10 @@
     <Compile Include="Assets\Scripts\CameraMove.cs" />
     <Compile Include="Assets\Scripts\Interaction_and_rotation_scripts\Interact_Script.cs" />
     <Compile Include="Assets\Scripts\Interaction_and_rotation_scripts\Object_Rotate.cs" />
-    <Compile Include="Assets\Scripts\Laser_Scripts\Activate_On_Trigger.cs" />
-    <Compile Include="Assets\Scripts\Laser_Scripts\Laser_Test.cs" />
-    <Compile Include="Assets\Scripts\Laser_Scripts\LaserEmitter_Script.cs" />
-    <Compile Include="Assets\Scripts\Laser_Scripts\Mirror_Script.cs" />
+    <Compile Include="Assets\Scripts\Laser_Scripts\Scripts\Activate_On_Trigger.cs" />
+    <Compile Include="Assets\Scripts\Laser_Scripts\Scripts\Emitter_Script.cs" />
+    <Compile Include="Assets\Scripts\Laser_Scripts\Scripts\Laser_Segment.cs" />
+    <Compile Include="Assets\Scripts\Laser_Scripts\Scripts\Mirror_Rotate.cs" />
     <Compile Include="Assets\Scripts\Menu_Scripts\MainMenuScript.cs" />
     <Compile Include="Assets\Scripts\Menu_Scripts\Material_Handling.cs" />
     <Compile Include="Assets\Scripts\Menu_Scripts\PrimativeInputManager.cs" />
@@ -243,46 +243,46 @@
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\SeeThru.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Readme_InteractionSystem.txt" />
     <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>D:/RIGPR_REPO/05_02_2019/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+      <HintPath>D:/RIGPR_REPO/Repo_07_02/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>D:/RIGPR_REPO/05_02_2019/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+      <HintPath>D:/RIGPR_REPO/Repo_07_02/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>D:/RIGPR_REPO/05_02_2019/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>D:/RIGPR_REPO/Repo_07_02/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/RIGPR_REPO/05_02_2019/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/RIGPR_REPO/Repo_07_02/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Lightweight.Runtime">
-      <HintPath>D:/RIGPR_REPO/05_02_2019/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Runtime.dll</HintPath>
+      <HintPath>D:/RIGPR_REPO/Repo_07_02/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Lightweight.Editor">
-      <HintPath>D:/RIGPR_REPO/05_02_2019/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Editor.dll</HintPath>
+      <HintPath>D:/RIGPR_REPO/Repo_07_02/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/RIGPR_REPO/05_02_2019/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/RIGPR_REPO/Repo_07_02/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
-      <HintPath>D:/RIGPR_REPO/05_02_2019/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
+      <HintPath>D:/RIGPR_REPO/Repo_07_02/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>D:/RIGPR_REPO/05_02_2019/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+      <HintPath>D:/RIGPR_REPO/Repo_07_02/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>D:/RIGPR_REPO/05_02_2019/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+      <HintPath>D:/RIGPR_REPO/Repo_07_02/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>D:/RIGPR_REPO/05_02_2019/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+      <HintPath>D:/RIGPR_REPO/Repo_07_02/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.HighDefinition.Editor">
-      <HintPath>D:/RIGPR_REPO/05_02_2019/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Editor.dll</HintPath>
+      <HintPath>D:/RIGPR_REPO/Repo_07_02/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/RIGPR_REPO/05_02_2019/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/RIGPR_REPO/Repo_07_02/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.IncludePaths">
-      <HintPath>D:/RIGPR_REPO/05_02_2019/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.RenderPipelines.Core.IncludePaths.dll</HintPath>
+      <HintPath>D:/RIGPR_REPO/Repo_07_02/RIGPR2018/ParadoxAtHursleyManor/Library/ScriptAssemblies/Unity.RenderPipelines.Core.IncludePaths.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Unity Hub/Unity Files/2018.2.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -483,7 +483,7 @@
       <HintPath>D:/Unity Hub/Unity Files/2018.2.11f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Valve.Newtonsoft.Json">
-      <HintPath>D:/RIGPR_REPO/05_02_2019/RIGPR2018/ParadoxAtHursleyManor/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
+      <HintPath>D:/RIGPR_REPO/Repo_07_02/RIGPR2018/ParadoxAtHursleyManor/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/ozlod/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
