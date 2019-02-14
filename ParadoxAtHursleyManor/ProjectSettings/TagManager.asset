@@ -7,6 +7,9 @@ TagManager:
   - Mirror
   - Barrier
   - Trigger
+  - projectile
+  - FxTemporaire
+  - Telepad
   layers:
   - Default
   - TransparentFX

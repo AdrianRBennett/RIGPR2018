@@ -6,19 +6,7 @@ public class Mirror_Rotate : MonoBehaviour
 {
     private bool isRotating = false;
    
-    //void Update()
-    // {
-    //     if (Input.GetKeyDown(KeyCode.Z) && isRotating == false)
-    //     {
-    //         isRotating = true;
-    //         StartCoroutine(Rotate(Vector3.up, 45, 2.0f));
-    //     }
-    //     if (Input.GetKeyDown(KeyCode.X) && isRotating == false)
-    //     {
-    //         isRotating = true;
-    //         StartCoroutine(Rotate(Vector3.up, -45, 2.0f));
-    //     }
-    //}
+    
 
     public void RotateLeft()
     {
