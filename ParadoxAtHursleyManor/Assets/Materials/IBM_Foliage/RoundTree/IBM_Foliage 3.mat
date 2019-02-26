@@ -83,7 +83,7 @@ Material:
     - Vector1_AE7D403E: 0
     - _AlphaClip: 0
     - _Blend: 0
-    - _BumpScale: 0.5
+    - _BumpScale: 1
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
