@@ -422,9 +422,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 45.77813, y: 3.502006, z: -4.558786}
+    m_Target: {x: 33.370464, y: 7.09206, z: 30.841234}
     speed: 2
-    m_Value: {x: 45.77813, y: 3.502006, z: -4.558786}
+    m_Value: {x: 33.370464, y: 7.09206, z: 30.841234}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -452,13 +452,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.0126615325, y: 0.06988823, z: -0.0008859546, w: 0.9974741}
+    m_Target: {x: -0.07639322, y: -0.13660732, z: 0.010565967, w: -0.9876188}
     speed: 2
-    m_Value: {x: 0.0126615325, y: 0.06988823, z: -0.0008859546, w: 0.9974741}
+    m_Value: {x: -0.07639322, y: -0.13660732, z: 0.010565967, w: -0.9876188}
   m_Size:
-    m_Target: 0.056984663
+    m_Target: 0.35698467
     speed: 2
-    m_Value: 0.056984663
+    m_Value: 0.35698467
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -555,10 +555,10 @@ MonoBehaviour:
     height: 650
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 391}
-    m_SelectedIDs: 7667fdff
-    m_LastClickedID: -170122
-    m_ExpandedIDs: 165efdff4665fdffc667fdff4068fdff9ce6fdff9ee6fdff08e7fdfff8edffffb4f0ffff26f6ffff40f6ffffe6fbffff00000000e0390000543a0000743a0000143b0000503d000054420000a0760000987a00003c800000b0830000
+    scrollPos: {x: 0, y: 3008}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 58fbffffe6fbffff00000000943900008a3a0000c03f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -619,7 +619,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts/Laser_Scripts/Objects
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -631,7 +631,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: b6280000
     m_LastClickedID: 10422
-    m_ExpandedIDs: 000000007e1200001015000034160000e818000094190000521a0000441b00005c1b0000e21b0000fa1b0000721c0000181e00006a1e00008e1e0000dc1e00003e1f00007a210000b82100003a2300009c2300002a260000fc260000422700006e270000cc270000e62700002c280000122a0000c82a0000be2b0000fc2b0000862c0000482d00005e2d0000522e0000402f0000522f00003e3000004630000078300000f8300000ac31000012320000a6340000ee690000f0690000f2690000f4690000f6690000f8690000fa690000fc690000
+    m_ExpandedIDs: 000000007e120000101500003416000096190000541a0000461b0000681b0000ee1b0000061c00007e1c0000241e0000641e0000761e00009a1e0000e81e00004a1f000086210000c421000024220000a823000036260000082700004e2700007a270000d8270000382800001e2a0000ca2b0000082c0000922c0000542d00006a2d00005e2e0000262f00004c2f00005e2f00004a300000523000008430000004310000b83100001e320000b2340000166a0000186a00001a6a00001c6a00001e6a0000206a0000226a0000246a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -656,24 +656,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 1535}
+    scrollPos: {x: 0, y: 1916}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff000000007e120000101500003416000094190000521a0000441b00005c1b0000e21b0000fa1b0000721c0000181e0000581e00006a1e00008e1e0000dc1e00003e1f00007a210000b8210000182200009c2300002a260000fc260000422700006e270000cc2700002c280000122a0000be2b0000fc2b0000862c0000482d00005e2d0000522e00001a2f0000402f0000522f00003e3000004630000078300000f8300000ac31000012320000a6340000ee690000f0690000f2690000f4690000f6690000f8690000fa690000fc690000
+    m_ExpandedIDs: ffffffff000000007e12000010150000261500003416000096190000541a0000ee1a0000461b0000681b0000ee1b0000061c00007e1c0000241e0000761e0000e81e00004a1f000086210000c421000024220000a8230000362600004a260000082700004e2700007a270000d8270000382800001e2a0000ca2b0000082c0000922c0000082d0000542d00006a2d00005e2e0000262f00004c2f00005e2f00004a300000523000008430000004310000b83100001e32000076330000b2340000166a0000186a00001a6a00001c6a00001e6a0000206a0000226a0000246a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: MainScene - Basement
-      m_OriginalName: MainScene - Basement
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 10502
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_SearchString: 
