@@ -20,8 +20,7 @@ public class InputManager : MonoBehaviour {
 	private char[] splittingCharacters = new char[] {	// The input string is split at each instance of these characters.
 		' '
 	};
-
-	private bool DEBUGVAR = false;
+    
 
 	void Start () {
 		/*
@@ -45,10 +44,7 @@ public class InputManager : MonoBehaviour {
 			}
 		}
 			
-		if (DEBUGVAR == false) {
-			ProcessInput ("place a");
-			DEBUGVAR = true;
-		}
+		
 	}
 
 	// PUBLIC METHODS
@@ -84,6 +80,10 @@ public class InputManager : MonoBehaviour {
 		latestItem = null;
 		latestItemPos = null;
 		ItemPosition[] itemPosToCheck = playerRef.position.AvailableItemPos;
+
+        if(latestInputWordList[0] == "place"){
+            int b = 0;
+        }
 
 		for (int i = 0; i < latestInputWordList.Length; i++) {				// Iteration through word input
 			for (int i2 = 0; i2 < data.commandList.Length; i2++) {				// Iteration through command list
