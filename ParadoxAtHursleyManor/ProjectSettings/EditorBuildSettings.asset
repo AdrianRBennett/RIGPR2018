@@ -5,10 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/StartScene.unity
     guid: 4e73e8f960ef15c418a7341011af1bdf
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
+    path: Assets/Scenes/MainScene - Basement.unity
+    guid: f3c1893a1d7a2dd4cb4895f17cc5c76e
+  - enabled: 1
+    path: Assets/Scenes/MainScene - MainFloor.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 0
+    path: Assets/Scenes/Teleport Testing.unity
+    guid: 0e56184bcbfe19141bc7133ed39a4880
+  - enabled: 0
+    path: Assets/Scenes/Teletesting part 2.unity
+    guid: 8eb36fb3f30b472488acf9a084cca413
   m_configObjects: {}

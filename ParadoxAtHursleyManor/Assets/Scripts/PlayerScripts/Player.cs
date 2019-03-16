@@ -16,7 +16,7 @@ public class Player : MonoBehaviour {
 		/*
 			Initialisation function. 
 		*/ 
-		if (GetComponentInParent<PlayerPosition> () != null) {
+		if (GetComponentInParent<PlayerPosition>() != null) {
 			position = GetComponentInParent<PlayerPosition> ();
 		} else {
 			Debug.Log ("The player is not stationed in a player position");

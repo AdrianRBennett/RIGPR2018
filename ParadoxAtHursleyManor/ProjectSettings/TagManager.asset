@@ -10,6 +10,7 @@ TagManager:
   - projectile
   - FxTemporaire
   - Telepad
+  - Telepad_NS
   layers:
   - Default
   - TransparentFX

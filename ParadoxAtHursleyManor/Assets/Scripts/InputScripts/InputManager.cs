@@ -106,10 +106,6 @@ public class InputManager : MonoBehaviour
         latestItemPos = null;
         ItemPosition[] itemPosToCheck = playerRef.position.AvailableItemPos;
 
-        if (latestInputWordList[0] == "place")
-        {
-            int e = 0;
-        }
 
         for (int i = 0; i < latestInputWordList.Length; i++)
         {               // Iteration through word input

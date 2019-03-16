@@ -17,6 +17,7 @@ public class Vive_Input : MonoBehaviour {
 
     private RaycastHit rayHit;
 
+ 
     private bool isTeleporting = false;
     public float fadeTime = 2f;
 
@@ -61,7 +62,9 @@ public class Vive_Input : MonoBehaviour {
     {
         if (rayHit.collider.tag == "Telepad" && teleport.GetStateDown(SteamVR_Input_Sources.RightHand) && isTeleporting == false)
         {
+            cameraRig.GetComponent<Player>().position = rayHit.collider.gameObject.GetComponent<PlayerPosition>();
             StartCoroutine("TeleportRig", rayHit.collider.gameObject.transform.position);
+
         }else if(rayHit.collider.tag == "Mirror")
         {
             if (SteamVR_Input._default.inActions.RotateLeft.GetStateDown(SteamVR_Input_Sources.RightHand))

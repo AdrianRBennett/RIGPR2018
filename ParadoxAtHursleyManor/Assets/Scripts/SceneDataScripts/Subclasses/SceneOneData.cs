@@ -13,7 +13,9 @@ public class SceneOneData : SceneData {
 			new CommandMove (),
 			new CommandPlace (),
 			new CommandFlip (),
-			new CommandRotate ()
+			new CommandRotate (),
+            new CommandLeft(),
+            new CommandRight()
 		};
 	}
 }
