@@ -50,6 +50,14 @@
       "type": "boolean"
     },
     {
+      "name": "/actions/default/in/ActivateLaser",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/PickUp",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },

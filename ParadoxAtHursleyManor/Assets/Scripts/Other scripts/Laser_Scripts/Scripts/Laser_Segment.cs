@@ -47,6 +47,12 @@ public class Laser_Segment : MonoBehaviour {
             } else if(Laser_Seg.GetComponent<Laser_Segment>().Laser_Seg != null)
             {
                 RemoveLasers();
+            } else if (newHit.collider.gameObject.GetComponent<DiscoBall>() != null)
+            {
+                newHit.collider.gameObject.GetComponent<DiscoBall>().Activate();
+            } else if (newHit.collider.gameObject.GetComponent<MirrorArtefact>() != null)
+            {
+                newHit.collider.gameObject.GetComponent<MirrorArtefact>().Activate();
             }
         } else
         {

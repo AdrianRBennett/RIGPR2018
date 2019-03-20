@@ -38,5 +38,9 @@ namespace Valve.VR
         public Valve.VR.SteamVR_Action_Boolean RotateLeft;
         
         public Valve.VR.SteamVR_Action_Boolean RotateRight;
+        
+        public Valve.VR.SteamVR_Action_Boolean ActivateLaser;
+        
+        public Valve.VR.SteamVR_Action_Boolean PickUp;
     }
 }

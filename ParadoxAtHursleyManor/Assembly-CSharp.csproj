@@ -76,10 +76,13 @@
     <Compile Include="Assets\Scripts\ItemPositionScripts\Subclasses\PlaceableItemPosition.cs" />
     <Compile Include="Assets\Scripts\ItemScripts\HoldableItem.cs" />
     <Compile Include="Assets\Scripts\ItemScripts\Item.cs" />
+    <Compile Include="Assets\Scripts\ItemScripts\Subclasses\Artefact.cs" />
     <Compile Include="Assets\Scripts\ItemScripts\Subclasses\Blue.cs" />
     <Compile Include="Assets\Scripts\ItemScripts\Subclasses\GearPuzzle\Gear.cs" />
     <Compile Include="Assets\Scripts\ItemScripts\Subclasses\Green.cs" />
     <Compile Include="Assets\Scripts\ItemScripts\Subclasses\LaserPuzzle\Mirror.cs" />
+    <Compile Include="Assets\Scripts\Other scripts\ArtefactHandler.cs" />
+    <Compile Include="Assets\Scripts\Other scripts\BasmentArtefacts.cs" />
     <Compile Include="Assets\Scripts\Other scripts\CameraMove.cs" />
     <Compile Include="Assets\Scripts\Other scripts\Interaction_and_rotation_scripts\Interact_Script.cs" />
     <Compile Include="Assets\Scripts\Other scripts\Interaction_and_rotation_scripts\Object_Rotate.cs" />
@@ -91,6 +94,9 @@
     <Compile Include="Assets\Scripts\Other scripts\Menu_Scripts\Material_Handling.cs" />
     <Compile Include="Assets\Scripts\Other scripts\Menu_Scripts\PrimativeInputManager.cs" />
     <Compile Include="Assets\Scripts\Other scripts\Menu_Scripts\Slider_Script.cs" />
+    <Compile Include="Assets\Scripts\Other scripts\Mirror_Puzzle\Scripts\ActivateLaser.cs" />
+    <Compile Include="Assets\Scripts\Other scripts\Mirror_Puzzle\Scripts\DiscoBall.cs" />
+    <Compile Include="Assets\Scripts\Other scripts\Mirror_Puzzle\Scripts\MirrorArtefact.cs" />
     <Compile Include="Assets\Scripts\Other scripts\Pause_Scripts\Pause_Input_Script.cs" />
     <Compile Include="Assets\Scripts\Other scripts\Pause_Scripts\Pause_Script.cs" />
     <Compile Include="Assets\Scripts\Other scripts\Vive_Input_Scripts\Telepad_NS.cs" />

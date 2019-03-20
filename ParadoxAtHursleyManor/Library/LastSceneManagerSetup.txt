@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/MainScene - MainFloor.unity
+- path: Assets/Scenes/MainScene - Basement.unity
   isLoaded: 1
   isActive: 1

@@ -102,10 +102,10 @@
             {
                "inputs" : {
                   "click" : {
-                     "output" : "/actions/default/in/interactui"
+                     "output" : "/actions/default/in/teleport"
                   }
                },
-               "mode" : "button",
+               "mode" : "trigger",
                "path" : "/user/hand/left/input/trigger"
             },
             {
@@ -134,7 +134,7 @@
             {
                "inputs" : {
                   "click" : {
-                     "output" : "/actions/default/in/grabpinch"
+                     "output" : "/actions/default/in/activatelaser"
                   }
                },
                "mode" : "button",
@@ -148,16 +148,16 @@
             {
                "inputs" : {
                   "click" : {
-                     "output" : "/actions/default/in/interactui"
+                     "output" : "/actions/default/in/teleport"
                   }
                },
-               "mode" : "button",
+               "mode" : "trigger",
                "path" : "/user/hand/right/input/trigger"
             },
             {
                "inputs" : {
                   "click" : {
-                     "output" : "/actions/default/in/grabpinch"
+                     "output" : "/actions/default/in/activatelaser"
                   }
                },
                "mode" : "button",
@@ -193,30 +193,6 @@
             {
                "inputs" : {
                   "click" : {
-                     "output" : "/actions/default/in/teleport"
-                  },
-                  "pull" : {
-                     "output" : "/actions/default/in/squeeze"
-                  }
-               },
-               "mode" : "trigger",
-               "path" : "/user/hand/left/input/trigger"
-            },
-            {
-               "inputs" : {
-                  "click" : {
-                     "output" : "/actions/default/in/teleport"
-                  },
-                  "pull" : {
-                     "output" : "/actions/default/in/squeeze"
-                  }
-               },
-               "mode" : "trigger",
-               "path" : "/user/hand/right/input/trigger"
-            },
-            {
-               "inputs" : {
-                  "click" : {
                      "output" : "/actions/default/in/pause"
                   }
                },
@@ -237,6 +213,9 @@
                   "east" : {
                      "output" : "/actions/default/in/rotateright"
                   },
+                  "south" : {
+                     "output" : "/actions/default/in/pickup"
+                  },
                   "west" : {
                      "output" : "/actions/default/in/rotateleft"
                   }
@@ -251,6 +230,9 @@
                "inputs" : {
                   "east" : {
                      "output" : "/actions/default/in/rotateright"
+                  },
+                  "south" : {
+                     "output" : "/actions/default/in/pickup"
                   },
                   "west" : {
                      "output" : "/actions/default/in/rotateleft"
@@ -307,7 +289,7 @@
    },
    "controller_type" : "vive_controller",
    "description" : "",
-   "name" : "IBM_Vive_02",
+   "name" : "IBM_Vive_03",
    "options" : {},
    "simulated_actions" : []
 }

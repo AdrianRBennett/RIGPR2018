@@ -10,6 +10,11 @@ public class Teleporting_Script : MonoBehaviour {
 
     public SteamVR_Action_Boolean teleport;
 
+    public SteamVR_Action_Boolean rotateL;
+    public SteamVR_Action_Boolean rotateR;
+
+    public SteamVR_Action_Boolean pickUP;
+
     public Transform rightHand;
 
     public GameObject controlRay;
@@ -24,6 +29,8 @@ public class Teleporting_Script : MonoBehaviour {
 
     private GameObject[] telepads;
     private GameObject[] telepadsNS;
+
+    private Vector3 newPosition;
 
     // Use this for initialization
     void Start () {
@@ -67,11 +74,27 @@ public class Teleporting_Script : MonoBehaviour {
             switch (rayHit.collider.tag)
             {
                 case "Telepad":
+                    newPosition = rayHit.collider.gameObject.transform.position;
                     StartCoroutine("TeleportRig");
                     break;
                 case "Telepad_NS":
                     nextIndex = rayHit.collider.gameObject.GetComponent<Telepad_NS>().teleIndex;
                     StartCoroutine("TeleportScene", rayHit.collider.gameObject.GetComponent<Telepad_NS>().sceneIndex);
+                    break;
+                case "Mirror":
+                    if (rotateL.GetStateUp(SteamVR_Input_Sources.RightHand))
+                    {
+                        rayHit.collider.gameObject.GetComponent<Mirror>().RotateInit(45);
+                    }
+                    else if (rotateR.GetStateUp(SteamVR_Input_Sources.RightHand))
+                    {
+                        rayHit.collider.gameObject.GetComponent<Mirror>().RotateInit(-45);
+                    }
+                    break;
+                case "Artefact":
+                    if (pickUP.GetStateUp(SteamVR_Input_Sources.RightHand)) {
+                        rayHit.collider.gameObject.GetComponent<Artefact>().PickUpArtefact();
+                    }
                     break;
                 default:
                     break;
@@ -126,7 +149,9 @@ public class Teleporting_Script : MonoBehaviour {
 
         SteamVR_Fade.View(Color.black, fadeTime);
         yield return new WaitForSeconds(fadeTime);
-        cameraRig.transform.position = rayHit.collider.gameObject.transform.position;
+        cameraRig.transform.position = newPosition;
+
+        newPosition = Vector3.zero;
 
         SteamVR_Fade.View(Color.clear, fadeTime);
         yield return new WaitForSeconds(fadeTime);
