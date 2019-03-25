@@ -11,7 +11,8 @@ public class CommandScan : Command {
         names = new string[] {
             identifier,
             "scanned",
-            "scand"
+            "scand",
+            "scam"
         };
     }
 

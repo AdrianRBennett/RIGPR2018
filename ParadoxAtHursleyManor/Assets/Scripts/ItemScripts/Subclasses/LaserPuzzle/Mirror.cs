@@ -4,30 +4,65 @@ using UnityEngine;
 
 public class Mirror : Item
 {
-
-
     private bool isRotating = false;
 
-    protected const string RotateName = CommandRotate.identifier;
+    //protected const string RotateName = CommandRotate.identifier;
+    //
+    //protected const string RotateL = CommandLeft.identifier;
+    //
+    //protected const string RotateR = CommandRight.identifier;
 
-    protected const string RotateL = CommandLeft.identifier;
+    protected CommandRotate cRotate = new CommandRotate();
 
-    protected const string RotateR = CommandRight.identifier;
+    protected CommandLeft cRotateL = new CommandLeft();
+
+    protected CommandRight cRotateR = new CommandRight();
 
     public override void TakeCommand(string commandName)
     {
-        switch (commandName)
+        base.TakeCommand(commandName);
+
+        foreach(string name in cRotate.names)
         {
-            case RotateName:
+            if(name == commandName)
+            {
                 RotateInit(45);
                 break;
-            case RotateL:
+            }
+        }
+
+        
+
+        foreach (string name in cRotateL.names)
+        {
+            if (name == commandName)
+            {
                 RotateInit(45);
                 break;
-            case RotateR:
+            }
+        }
+
+        foreach (string name in cRotateR.names)
+        {
+            if (name == commandName)
+            {
                 RotateInit(-45);
                 break;
+            }
         }
+
+        //switch (commandName)
+        //{
+        //    case RotateName:
+        //        RotateInit(45);
+        //        break;
+        //    case RotateL:
+        //        RotateInit(45);
+        //        break;
+        //    case RotateR:
+        //        RotateInit(-45);
+        //        break;
+        //}
     }
 
     protected override void InitNames()
@@ -50,7 +85,7 @@ public class Mirror : Item
         if (isRotating == false)
         {
             isRotating = true;
-            StartCoroutine(Rotate(Vector3.up, angle, 1.0f));
+            StartCoroutine(Rotate(-Vector3.forward, angle, 1.0f));
         }
     }
 

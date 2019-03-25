@@ -6,8 +6,7 @@ public class CommandLeft : Command {
 
     public const string identifier = "left";
 
-    public CommandLeft()
-    {
+    public CommandLeft() {
         names = new string[] {
             identifier,
             "clockwise"

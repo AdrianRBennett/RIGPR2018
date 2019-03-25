@@ -6,8 +6,7 @@ public class CommandRight : Command {
 
     public const string identifier = "right";
 
-    public CommandRight()
-    {
+    public CommandRight() {
         names = new string[] {
             identifier
         };

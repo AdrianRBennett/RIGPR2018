@@ -37,8 +37,9 @@ public class ScanBoard_Script : MonoBehaviour {
 
     IEnumerator Display()
     {
-        transform.position = boardPos.position + (-boardPos.right * 2);
+        
         transform.position = Vector3.Lerp(transform.position, cameraObj.transform.position, 0.3f);
+        transform.position = boardPos.position + (cameraObj.transform.right * 2);
         yield return new WaitForSeconds(5.0f);
 
         transform.position = new Vector3(0.0f, -10.0f, 0.0f);

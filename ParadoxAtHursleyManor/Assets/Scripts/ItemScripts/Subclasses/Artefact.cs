@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Artefact : Item {
 
-    public string identifier;
+    
     public int ID;
 
     protected const string pickupName = CommandPickUp.identifier;
 
     public override void TakeCommand(string commandName)
     {
+        base.TakeCommand(commandName);
+
         switch (commandName)
         {
             case pickupName:

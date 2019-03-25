@@ -10,4 +10,5 @@ public abstract class Command {
 	public string[] names;	// An array of words that this command can be identified with.
 
 	public abstract string GetIdentifier ();
+
 }

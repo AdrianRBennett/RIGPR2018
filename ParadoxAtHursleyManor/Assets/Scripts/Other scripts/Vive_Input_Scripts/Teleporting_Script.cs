@@ -65,17 +65,17 @@ public class Teleporting_Script : MonoBehaviour {
                 controlRay.transform.localScale = new Vector3(controlRay.transform.localScale.x, rayHit.distance * 0.5f, controlRay.transform.localScale.z);
                 TelepadVisible(true);
 
-                if(rayHit.collider.GetComponent<Scannable>() != null)
+                if(rayHit.collider.GetComponent<Item>() != null)
                 {
-                    rayHit.collider.GetComponent<Scannable>().highlight = true;
+                    rayHit.collider.GetComponent<Item>().highlight = true;
                 }
 
             }
         } else if(teleport.GetStateUp(SteamVR_Input_Sources.RightHand) && isTeleporting == false)
         {   
-            if(rayHit.collider.GetComponent<Scannable>() != null && scan.GetStateUp(SteamVR_Input_Sources.RightHand))
+            if(rayHit.collider.GetComponent<Item>() != null && scan.GetStateUp(SteamVR_Input_Sources.RightHand))
             {
-                rayHit.collider.GetComponent<Scannable>().ScanThis();
+                rayHit.collider.GetComponent<Item>().ScanThis();
                 // SCAN CODE GO HERE!
             }
 
