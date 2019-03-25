@@ -213,6 +213,9 @@
                   "east" : {
                      "output" : "/actions/default/in/rotateright"
                   },
+                  "north" : {
+                     "output" : "/actions/default/in/scan"
+                  },
                   "south" : {
                      "output" : "/actions/default/in/pickup"
                   },
@@ -230,6 +233,9 @@
                "inputs" : {
                   "east" : {
                      "output" : "/actions/default/in/rotateright"
+                  },
+                  "north" : {
+                     "output" : "/actions/default/in/scan"
                   },
                   "south" : {
                      "output" : "/actions/default/in/pickup"
@@ -289,7 +295,7 @@
    },
    "controller_type" : "vive_controller",
    "description" : "",
-   "name" : "IBM_Vive_03",
+   "name" : "IBM_Vive_04",
    "options" : {},
    "simulated_actions" : []
 }

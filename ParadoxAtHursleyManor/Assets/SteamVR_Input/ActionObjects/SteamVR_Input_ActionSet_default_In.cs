@@ -42,5 +42,7 @@ namespace Valve.VR
         public Valve.VR.SteamVR_Action_Boolean ActivateLaser;
         
         public Valve.VR.SteamVR_Action_Boolean PickUp;
+        
+        public Valve.VR.SteamVR_Action_Boolean Scan;
     }
 }

@@ -6,31 +6,32 @@ using Valve.VR;
 
 public class Teleporting_Script : MonoBehaviour {
 
+    public bool debugControl = false;
+    public float fadeTime = 0.5f;
+
     public GameObject cameraRig;
-
-    public SteamVR_Action_Boolean teleport;
-
-    public SteamVR_Action_Boolean rotateL;
-    public SteamVR_Action_Boolean rotateR;
-
-    public SteamVR_Action_Boolean pickUP;
-
     public Transform rightHand;
-
     public GameObject controlRay;
 
-    public float fadeTime = 0.5f;
+
+    public SteamVR_Action_Boolean teleport;
+    public SteamVR_Action_Boolean rotateL;
+    public SteamVR_Action_Boolean rotateR;
+    public SteamVR_Action_Boolean pickUP;
+    public SteamVR_Action_Boolean scan;
+
+
+    private GameObject[] telepads;
+    private GameObject[] telepadsNS;
+    
+    private int nextIndex;
 
     private RaycastHit rayHit;
 
     private bool isTeleporting = false;
 
-    private int nextIndex;
-
-    private GameObject[] telepads;
-    private GameObject[] telepadsNS;
-
     private Vector3 newPosition;
+
 
     // Use this for initialization
     void Start () {
@@ -42,16 +43,13 @@ public class Teleporting_Script : MonoBehaviour {
 
         if (PlayerPrefs.HasKey("Index"))
         {
-            NewScene();
+            if(PlayerPrefs.GetInt("Index") != 0)
+            {
+                NewScene();
+            }
         }
 
         TelepadVisible(false);
-
-
-        //if (GameObject.Find("Position_Tracker").GetComponent<Position_Tracking>().posIndex[SceneManager.GetActiveScene().buildIndex] > 0)
-        //{
-        //    NewScene();
-        //}
     }
 	
 	// Update is called once per frame
@@ -59,8 +57,7 @@ public class Teleporting_Script : MonoBehaviour {
         if (teleport.GetState(SteamVR_Input_Sources.RightHand))
         {
             controlRay.SetActive(true);
-            //Debug.DrawLine(rightHand.position, (rightHand.position + rightHand.forward * 10.0f), Color.blue);
-            if (Physics.Raycast(rightHand.position, (-rightHand.up), out rayHit))
+            if (Physics.Raycast(rightHand.position, (rightHand.forward - rightHand.up), out rayHit))
             {
                 controlRay.transform.position = rightHand.position + ((rayHit.point - rightHand.position) * 0.5f);
                 controlRay.transform.LookAt(rayHit.point);
@@ -68,9 +65,20 @@ public class Teleporting_Script : MonoBehaviour {
                 controlRay.transform.localScale = new Vector3(controlRay.transform.localScale.x, rayHit.distance * 0.5f, controlRay.transform.localScale.z);
                 TelepadVisible(true);
 
+                if(rayHit.collider.GetComponent<Scannable>() != null)
+                {
+                    rayHit.collider.GetComponent<Scannable>().highlight = true;
+                }
+
             }
         } else if(teleport.GetStateUp(SteamVR_Input_Sources.RightHand) && isTeleporting == false)
-        {            
+        {   
+            if(rayHit.collider.GetComponent<Scannable>() != null && scan.GetStateUp(SteamVR_Input_Sources.RightHand))
+            {
+                rayHit.collider.GetComponent<Scannable>().ScanThis();
+                // SCAN CODE GO HERE!
+            }
+
             switch (rayHit.collider.tag)
             {
                 case "Telepad":
@@ -82,17 +90,17 @@ public class Teleporting_Script : MonoBehaviour {
                     StartCoroutine("TeleportScene", rayHit.collider.gameObject.GetComponent<Telepad_NS>().sceneIndex);
                     break;
                 case "Mirror":
-                    if (rotateL.GetStateUp(SteamVR_Input_Sources.RightHand))
+                    if (rotateL.GetStateUp(SteamVR_Input_Sources.RightHand) && debugControl)
                     {
                         rayHit.collider.gameObject.GetComponent<Mirror>().RotateInit(45);
                     }
-                    else if (rotateR.GetStateUp(SteamVR_Input_Sources.RightHand))
+                    else if (rotateR.GetStateUp(SteamVR_Input_Sources.RightHand) && debugControl)
                     {
                         rayHit.collider.gameObject.GetComponent<Mirror>().RotateInit(-45);
                     }
                     break;
                 case "Artefact":
-                    if (pickUP.GetStateUp(SteamVR_Input_Sources.RightHand)) {
+                    if (pickUP.GetStateUp(SteamVR_Input_Sources.RightHand) && debugControl) {
                         rayHit.collider.gameObject.GetComponent<Artefact>().PickUpArtefact();
                     }
                     break;
@@ -170,8 +178,7 @@ public class Teleporting_Script : MonoBehaviour {
 
         PlayerPrefs.SetInt("Index", nextIndex);
 
-        //GameObject.Find("Position_Tracker").GetComponent<Position_Tracking>().posIndex[SceneIndex] = nextIndex;
-        //GameObject.Find("Position_Tracker").GetComponent<Position_Tracking>().positions[SceneManager.GetActiveScene().buildIndex] = cameraRig.transform.position;
+        
         SceneManager.LoadScene(SceneIndex);
 
     }
