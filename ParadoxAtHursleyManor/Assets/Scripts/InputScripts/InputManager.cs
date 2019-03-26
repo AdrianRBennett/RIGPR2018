@@ -49,12 +49,12 @@ public class InputManager : MonoBehaviour
         /*
 			Update function. 
 		*/
-        customDebugText.text = "";
+        //customDebugText.text = "";
         if (customDebugTextOn)
         {
             for (int i = 0; i < latestInputWordList.Length; i++)
             {
-                customDebugText.text += latestInputWordList[i] + " ";
+                //customDebugText.text += latestInputWordList[i] + " ";
             }
         }
 
@@ -170,17 +170,17 @@ public class InputManager : MonoBehaviour
             latestItem.TakeCommand(latestCommand);
 
         }
-        else if (latestItemPos != null && latestItemPos.heldItem == null && latestCommand == CommandPlace.identifier)
-        {   // Place command sent to item position.
-            if (playerRef.heldItem != null)
-                playerRef.heldItem.BePlaced(latestItemPos);
-            else
-                Debug.Log("The player cannot place an item when they are holding nothing.");
-
-        }
-        else if (latestItem == null && latestCommand != string.Empty && playerRef.heldItem != null)
-        {   // Command sent to player's held item.
-            playerRef.heldItem.TakeCommand(latestCommand);
-        }
+        //else if (latestItemPos != null && latestItemPos.heldItem == null && latestCommand == CommandPlace.identifier)
+        //{   // Place command sent to item position.
+        //    if (playerRef.heldItem != null)
+        //        playerRef.heldItem.BePlaced(latestItemPos);
+        //    else
+        //        Debug.Log("The player cannot place an item when they are holding nothing.");
+        //
+        //}
+        //else if (latestItem == null && latestCommand != string.Empty && playerRef.heldItem != null)
+        //{   // Command sent to player's held item.
+        //    playerRef.heldItem.TakeCommand(latestCommand);
+        //}
     }
 }

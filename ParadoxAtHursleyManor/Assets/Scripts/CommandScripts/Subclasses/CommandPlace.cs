@@ -8,7 +8,9 @@ public class CommandPlace : Command {
 
 	public CommandPlace() {
 		names = new string[] {
-			identifier	
+			identifier,
+            "police",
+            "please"
 		};
 	}
 

@@ -8,6 +8,8 @@ public class Gear : HoldableItem {
 
 	public Orientation requiredYOrient;
 	public Orientation requiredZOrient;
+	public Orientation yOrient = new Orientation();
+	public Orientation zOrient = new Orientation();
 	public string gearID = "";
 
 	// PROTECTED MEMBERS
@@ -15,8 +17,6 @@ public class Gear : HoldableItem {
 	protected const string FlipName = CommandFlip.identifier;
 	protected const string RotateName = CommandRotate.identifier;
 
-	protected Orientation yOrient = new Orientation();
-	protected Orientation zOrient = new Orientation();
 	protected const int orientStateOffset = 90;
 	protected const int noOfOrientStates = 4;
 
@@ -29,10 +29,15 @@ public class Gear : HoldableItem {
 		state4 = 270
 	};
 
-	// PUBLIC METHODS
+    // PUBLIC METHODS
 
-	public override void TakeCommand(string commandName) {
-		base.TakeCommand (commandName);
+    private void Awake()
+    {
+        
+    }
+
+    public override void TakeCommand(string commandName) {
+		base.TakeCommand(commandName);
 		switch (commandName) {
 		case FlipName:
 			BeFlipped ();

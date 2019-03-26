@@ -71,6 +71,8 @@
      <Compile Include="Assets\Scripts\ItemScripts\Item.cs" />
      <Compile Include="Assets\Scripts\ItemScripts\Subclasses\Artefact.cs" />
      <Compile Include="Assets\Scripts\ItemScripts\Subclasses\Blue.cs" />
+     <Compile Include="Assets\Scripts\ItemScripts\Subclasses\GearPuzzle\Cog.cs" />
+     <Compile Include="Assets\Scripts\ItemScripts\Subclasses\GearPuzzle\CogPeg.cs" />
      <Compile Include="Assets\Scripts\ItemScripts\Subclasses\GearPuzzle\Gear.cs" />
      <Compile Include="Assets\Scripts\ItemScripts\Subclasses\Green.cs" />
      <Compile Include="Assets\Scripts\ItemScripts\Subclasses\LaserPuzzle\Mirror.cs" />
@@ -95,6 +97,7 @@
      <Compile Include="Assets\Scripts\Other scripts\Pause_Scripts\Pause_Input_Script.cs" />
      <Compile Include="Assets\Scripts\Other scripts\Pause_Scripts\Pause_Script.cs" />
      <Compile Include="Assets\Scripts\Other scripts\Scanning_Scripts\ScanBoard_Script.cs" />
+     <Compile Include="Assets\Scripts\Other scripts\TestingCog.cs" />
      <Compile Include="Assets\Scripts\Other scripts\Vive_Input_Scripts\Telepad_NS.cs" />
      <Compile Include="Assets\Scripts\Other scripts\Vive_Input_Scripts\Teleporting_Script.cs" />
      <Compile Include="Assets\Scripts\Other scripts\Vive_Input_Scripts\Vive_Input.cs" />

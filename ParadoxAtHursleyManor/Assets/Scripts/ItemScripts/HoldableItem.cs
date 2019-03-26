@@ -9,20 +9,43 @@ public abstract class HoldableItem : Item {
 
 	// PROTECTED MEMBERS
 
-	protected const string PickUpName = CommandPickUp.identifier;
-	protected const string DropName = CommandDrop.identifier;
+	//protected const string PickUpName = CommandPickUp.identifier;
+	//protected const string DropName = CommandDrop.identifier;
 
-	// PUBLIC METHODS
+    protected CommandPickUp cPickup = new CommandPickUp();
+    protected CommandDrop cDrop = new CommandDrop();
 
-	public override void TakeCommand(string commandName) {
-		switch (commandName) {
-		case PickUpName:
-			BePickedUp ();
-			break;
-		case DropName:
-			BeDropped ();
-			break;
-		}
+    // PUBLIC METHODS
+
+    public override void TakeCommand(string commandName) {
+        base.TakeCommand(commandName);
+
+        foreach(string name in cPickup.names)
+        {
+            if(name == commandName)
+            {
+                BePickedUp();
+                break;
+            }
+        }
+
+        foreach (string name in cDrop.names)
+        {
+            if (name == commandName)
+            {
+                BeDropped(); 
+                break;
+            }
+        }
+
+        //switch (commandName) {
+		//case PickUpName:
+		//	BePickedUp ();
+		//	break;
+		//case DropName:
+		//	BeDropped ();
+		//	break;
+		//}
 	}
 
 	// PROTECTED METHODS
