@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Testing - Gear.unity
+- path: Assets/Scenes/MainScene - MainFloor.unity
   isLoaded: 1
   isActive: 1
