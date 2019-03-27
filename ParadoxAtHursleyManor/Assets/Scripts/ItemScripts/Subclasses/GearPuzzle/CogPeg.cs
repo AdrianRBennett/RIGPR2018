@@ -15,7 +15,6 @@ public class CogPeg : Item
             names = new string[] {
             pegID,
             "slot",
-            "here",
             "axis",
             "axle"
             };
@@ -26,7 +25,6 @@ public class CogPeg : Item
             string[] extraIDs = new string[]
             {
                 "slot",
-                "here",
                 "axis",
                 "axle"
             };
@@ -61,17 +59,27 @@ public class CogPeg : Item
 
     public void PlaceCog()
     {
+        bool breakLoop = false;
         if(playerRef.heldItem != null && playerRef.heldItem.GetComponent<Cog>() != null)
         {
-            if(playerRef.heldItem.GetComponent<Cog>().cogID == pegID)
+            foreach(string pegName in names)
             {
-                playerRef.heldItem.GetComponent<Cog>().itemHolder = gameObject;
-                
-                playerRef.heldItem = null;
+                foreach(string cogName in playerRef.heldItem.GetComponent<Cog>().names)
+                {
+                    if(pegName == cogName)
+                    {
+                        playerRef.heldItem.GetComponent<Cog>().itemHolder = gameObject;
+                        playerRef.heldItem = null;
+                        breakLoop = true;
+                        break;
+                    }
+                }
+                if(breakLoop == true)
+                {
+                    break;
+                }
             }
-        } else
-        {
-            Debug.Log("Wrong Peg");
-        }
+  
+        } 
     }
 }

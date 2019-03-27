@@ -18,7 +18,6 @@ public class Cog : Item
             cogID,
             "gear",
             "cog",
-            "here",
             "give",
             "yeah"
         };
@@ -53,7 +52,7 @@ public class Cog : Item
     {
         if(beingHeld == true)
         {
-            transform.position = itemHolder.transform.position - (Vector3.up * 1);
+            //transform.position = itemHolder.transform.position - (Vector3.up * 1);
         }
     }
 }

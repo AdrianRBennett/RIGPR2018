@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1306,10 +1306,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd22c759c2d6494cb13066b678a6d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cogObject: {fileID: 1469792885}
+  blueCog: {fileID: 1469792885}
+  redCog: {fileID: 1623380195}
+  bluePeg: {fileID: 278102824}
+  redPeg: {fileID: 1652001937}
   pos1: {fileID: 1441060694}
   pos2: {fileID: 845779160}
-  player: {fileID: 0}
 --- !u!1 &882479639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,6 +1989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AvailableItemPos:
   - {fileID: 1469792890}
+  - {fileID: 1623380199}
 --- !u!1 &1446174305
 GameObject:
   m_ObjectHideFlags: 0
@@ -2383,6 +2386,8 @@ GameObject:
   - component: {fileID: 1623380198}
   - component: {fileID: 1623380197}
   - component: {fileID: 1623380196}
+  - component: {fileID: 1623380200}
+  - component: {fileID: 1623380199}
   m_Layer: 0
   m_Name: Gear_2
   m_TagString: Untagged
@@ -2448,6 +2453,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: -90.00001, y: 90, z: 0}
+--- !u!114 &1623380199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1623380195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c60fc2267dfb54f959302c4ab589f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heldItem: {fileID: 1575430143}
+--- !u!114 &1623380200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1623380195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a1d0ba1bde22b49869d84cea7892df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highShader: {fileID: 0}
+  highlight: 0
+  description: 
+  identifier: 
+  names: []
+  basePos: {fileID: 0}
+  cogID: red
+  itemHolder: {fileID: 1298989396}
 --- !u!1 &1652001937
 GameObject:
   m_ObjectHideFlags: 0
@@ -2585,7 +2621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1687261678
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -58,15 +58,15 @@ public class InputManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            ProcessInput(DEBUGCOMMANDS[DEBUGVAR]);
-
-            if (DEBUGVAR < (DEBUGCOMMANDS.Length - 1))
-                DEBUGVAR++;
-            else
-                DEBUGVAR = 0;
-        }
+        //if (Input.GetKeyDown(KeyCode.L))
+        //{
+        //    ProcessInput(DEBUGCOMMANDS[DEBUGVAR]);
+        //
+        //    if (DEBUGVAR < (DEBUGCOMMANDS.Length - 1))
+        //        DEBUGVAR++;
+        //    else
+        //        DEBUGVAR = 0;
+        //}
     }
 
     // PUBLIC METHODS
@@ -106,39 +106,44 @@ public class InputManager : MonoBehaviour
         latestItemPos = null;
         ItemPosition[] itemPosToCheck = playerRef.position.AvailableItemPos;
 
-
-        for (int i = 0; i < latestInputWordList.Length; i++)
-        {               // Iteration through word input
-            for (int i2 = 0; i2 < data.commandList.Length; i2++)
-            {               // Iteration through command list
-                for (int i3 = 0; i3 < data.commandList[i2].names.Length; i3++)
-                {   // Iteration through command names
-                    if (data.commandList[i2].names[i3] == latestInputWordList[i])
-                    {   // Check if command name matches matches input word
-                        SetLatestCommand(data.commandList[i2].GetIdentifier());
+        if(itemPosToCheck != null)
+        {
+            for (int i = 0; i < latestInputWordList.Length; i++)
+            {               // Iteration through word input
+                for (int i2 = 0; i2 < data.commandList.Length; i2++)
+                {               // Iteration through command list
+                    for (int i3 = 0; i3 < data.commandList[i2].names.Length; i3++)
+                    {   // Iteration through command names
+                        if (data.commandList[i2].names[i3] == latestInputWordList[i])
+                        {   // Check if command name matches matches input word
+                            SetLatestCommand(data.commandList[i2].GetIdentifier());
+                        }
                     }
                 }
-            }
-            for (int i2 = 0; i2 < itemPosToCheck.Length; i2++)
-            {               // Iteration through accessible item positions
-                for (int i3 = 0; i3 < itemPosToCheck[i2].GetNames().Length; i3++)
-                {
-                    if (itemPosToCheck[i2].GetNames()[i3] == latestInputWordList[i] && itemPosToCheck[i2].canBePlacedIn)
+                for (int i2 = 0; i2 < itemPosToCheck.Length; i2++)
+                {               // Iteration through accessible item positions
+                    for (int i3 = 0; i3 < itemPosToCheck[i2].GetNames().Length; i3++)
                     {
-                        SetLatestItemPos(itemPosToCheck[i2]);
+                        if (itemPosToCheck[i2].GetNames()[i3] == latestInputWordList[i] && itemPosToCheck[i2].canBePlacedIn)
+                        {
+                            SetLatestItemPos(itemPosToCheck[i2]);
+                        }
                     }
-                }
-                if (itemPosToCheck[i2].heldItem != null)
-                {
-                    for (int i3 = 0; i3 < itemPosToCheck[i2].heldItem.names.Length; i3++)
-                    {   // Iteration through item names
-                        if (itemPosToCheck[i2].heldItem.names[i3] == latestInputWordList[i])
-                        {   // Check if item name matches input word.
-                            SetLatestItem(itemPosToCheck[i2].heldItem);
+                    if (itemPosToCheck[i2].heldItem != null)
+                    {
+                        for (int i3 = 0; i3 < itemPosToCheck[i2].heldItem.names.Length; i3++)
+                        {   // Iteration through item names
+                            if (itemPosToCheck[i2].heldItem.names[i3] == latestInputWordList[i])
+                            {   // Check if item name matches input word.
+                                SetLatestItem(itemPosToCheck[i2].heldItem);
+                            }
                         }
                     }
                 }
             }
+        } else
+        {
+            Debug.Log("No itemPos attached to this position");
         }
     }
 
