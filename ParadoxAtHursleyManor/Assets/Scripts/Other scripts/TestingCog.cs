@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class TestingCog : MonoBehaviour {
 
-    public GameObject cogObject;
+    public GameObject cogBlue;
+    public GameObject cogRed;
+
+    public GameObject pegBlue;
+    public GameObject pegRed;
 
     public GameObject pos1;
     public GameObject pos2;
+
 
     public GameObject player;
 
@@ -18,10 +23,26 @@ public class TestingCog : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.P))
+        if (Input.GetKey(KeyCode.T))
         {
-            cogObject.GetComponent<Cog>().Pickup();
+            cogBlue.GetComponent<Cog>().Pickup();
         }
+        if (Input.GetKey(KeyCode.Y))
+        {
+            cogRed.GetComponent<Cog>().Pickup();
+        }
+
+
+        if (Input.GetKey(KeyCode.G))
+        {
+            pegBlue.GetComponent<CogPeg>().PlaceCog();
+        }
+        if (Input.GetKey(KeyCode.H))
+        {
+            pegRed.GetComponent<CogPeg>().PlaceCog();
+        }
+
+
         if (Input.GetKey(KeyCode.A))
         {
             transform.position = pos1.transform.position;

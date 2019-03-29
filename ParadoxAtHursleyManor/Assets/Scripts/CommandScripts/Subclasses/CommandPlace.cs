@@ -10,7 +10,8 @@ public class CommandPlace : Command {
 		names = new string[] {
 			identifier,
             "police",
-            "please"
+            "please",
+            "put"
 		};
 	}
 

@@ -39,7 +39,10 @@ public abstract class Item : MonoBehaviour {
 		InitNames ();
 
         rend = GetComponent<Renderer>();
+        
         mainShader = rend.material.shader;
+
+
 
         scanBoard = GameObject.Find("Scan_Board");
     }
@@ -76,7 +79,7 @@ public abstract class Item : MonoBehaviour {
             highlight = false;
             rend.material.shader = highShader;
         }
-        else
+        else if(mainShader != null)
         {
             rend.material.shader = mainShader;
         }

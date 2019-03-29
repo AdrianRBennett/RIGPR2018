@@ -6,6 +6,8 @@ public class Cog : Item
 {
     public string cogID;
 
+    public bool onPeg = false;
+
     public GameObject itemHolder;
 
     private bool beingHeld = false;
@@ -19,7 +21,8 @@ public class Cog : Item
             "gear",
             "cog",
             "give",
-            "yeah"
+            "yeah",
+            "gay"
         };
     }
 
@@ -52,7 +55,15 @@ public class Cog : Item
     {
         if(beingHeld == true)
         {
-            //transform.position = itemHolder.transform.position - (Vector3.up * 1);
+            if(onPeg == true)
+            {
+                transform.position = itemHolder.transform.position;
+                transform.rotation = itemHolder.transform.rotation;
+            } else
+            {
+                transform.position = itemHolder.transform.position - (Vector3.up * 1.5f);
+                transform.Rotate(5.0f, 5.0f, 5.0f);
+            }
         }
     }
 }

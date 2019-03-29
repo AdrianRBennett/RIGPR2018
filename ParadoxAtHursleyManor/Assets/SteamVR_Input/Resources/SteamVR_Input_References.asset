@@ -28,7 +28,7 @@ MonoBehaviour:
   - __actions_default_in_SkeletonLeftHand
   - __actions_default_in_SkeletonRightHand
   - __actions_default_in_Squeeze
-  - __actions_default_in_Pause
+  - __actions_default_in_Quit
   - __actions_default_in_RotateLeft
   - __actions_default_in_RotateRight
   - __actions_default_in_ActivateLaser
@@ -50,7 +50,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 07eeac6684ce61e419951accf69327c9, type: 2}
   - {fileID: 11400000, guid: 259d79b155f8f5649986ea37334e4f63, type: 2}
   - {fileID: 11400000, guid: c5f6c8fee2489c346bd43bae948720df, type: 2}
-  - {fileID: 11400000, guid: 20a012d0a04c0b840ba6bdfdf95a0cc9, type: 2}
+  - {fileID: 11400000, guid: 3993e31251aab824497dae067a735cb5, type: 2}
   - {fileID: 11400000, guid: 4a18bfd32f2f9ed438674f34e8f62642, type: 2}
   - {fileID: 11400000, guid: b4afe6a8eade5804ea5539ac3117a4f6, type: 2}
   - {fileID: 11400000, guid: cc5781ce40798c1478dcdabe3e637e07, type: 2}

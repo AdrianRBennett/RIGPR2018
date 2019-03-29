@@ -52,6 +52,7 @@ public class CogPeg : Item
             if (name == commandName)
             {
                 PlaceCog();
+                break;
             }
         }
 
@@ -60,26 +61,50 @@ public class CogPeg : Item
     public void PlaceCog()
     {
         bool breakLoop = false;
+        bool placed = false;
         if(playerRef.heldItem != null && playerRef.heldItem.GetComponent<Cog>() != null)
         {
+
             foreach(string pegName in names)
             {
-                foreach(string cogName in playerRef.heldItem.GetComponent<Cog>().names)
+                if (breakLoop == true)
+                {
+                    Debug.Log("Loop had been broken");
+                    break;
+                }
+
+                foreach (string cogName in playerRef.heldItem.GetComponent<Cog>().names)
                 {
                     if(pegName == cogName)
                     {
-                        playerRef.heldItem.GetComponent<Cog>().itemHolder = gameObject;
-                        playerRef.heldItem = null;
+                        PlaceCode();
                         breakLoop = true;
+                        placed = true;
                         break;
                     }
                 }
-                if(breakLoop == true)
-                {
-                    break;
-                }
+                
             }
   
         } 
+        if(placed == false)
+        {
+            Debug.Log("Wrong Cog");
+        }
+    }
+
+    private void PlaceCode()
+    {
+        playerRef.heldItem.GetComponent<Cog>().itemHolder = gameObject;
+        playerRef.heldItem.GetComponent<Cog>().onPeg = true;
+        playerRef.heldItem = null;
+
+        for(int i = 0; i < playerRef.position.AvailableItemPos.Length; i++)
+        {
+            if(playerRef.position.AvailableItemPos[i] == GetComponent<ItemPosition>())
+            {
+                playerRef.position.AvailableItemPos[i] = new ItemPosition();
+            }
+        }
     }
 }

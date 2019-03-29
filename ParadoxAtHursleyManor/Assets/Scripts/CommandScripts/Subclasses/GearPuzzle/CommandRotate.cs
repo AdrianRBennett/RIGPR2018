@@ -9,7 +9,8 @@ public class CommandRotate : Command {
 	public CommandRotate() {
 		names = new string[] {
 			identifier,
-            "turn"
+            "turn",
+            "rotates"
 		};
 	}
 

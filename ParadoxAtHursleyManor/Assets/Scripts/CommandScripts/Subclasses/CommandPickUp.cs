@@ -11,7 +11,8 @@ public class CommandPickUp : Command {
 			identifier,
 			"pick",
 			"grab",
-			"take"
+			"take",
+            "echo"
 		};
 	}
 

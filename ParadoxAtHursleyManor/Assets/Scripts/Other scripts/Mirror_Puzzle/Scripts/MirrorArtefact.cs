@@ -10,9 +10,13 @@ public class MirrorArtefact : MonoBehaviour {
 
     public GameObject artefact;
 
+    private GameObject player;
+
+    public GameObject telepad;
+
     public void Activate()
     {
-        if (!active)
+        if (!active && (player.GetComponent<Player>().position == telepad.GetComponent<PlayerPosition>()))
         {
             active = true;
             StartCoroutine("PlantActive");
@@ -23,7 +27,8 @@ public class MirrorArtefact : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+        player = GameObject.Find("[CameraRig]");
+        //telepad = GameObject.Find("Telepad (79)");
 	}
 	
     // Starting Scale:  0.04

@@ -69,14 +69,29 @@ public class Mirror : Item
     {
         names = new string[] {
             "mirror",
+            "Mirror",
             "mira",
             "Mira",
             "mera",
+            "Mera",
             "meara",
+            "Meara",
             "mana",
             "similar",
             "Miro",
-            "Meryal"
+            "Meryal",
+            "mayor",
+            "Zero",
+            "zero",
+            "0",
+            "maya",
+            "Maya",
+            "muda",
+            "era",
+            "mirar",
+            "mirage",
+            "mayer",
+            "meyer"
         };
     }
 

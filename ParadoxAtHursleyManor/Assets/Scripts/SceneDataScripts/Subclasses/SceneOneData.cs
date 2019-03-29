@@ -8,14 +8,15 @@ public class SceneOneData : SceneData {
 	*/ 
 	void Start()
 	{
-		commandList = new Command[] {
-			new CommandPickUp (),
-			new CommandMove (),
-			new CommandPlace (),
-			new CommandFlip (),
-			new CommandRotate (),
+        commandList = new Command[] {
+            new CommandPickUp (),
+            new CommandMove (),
+            new CommandPlace (),
+            new CommandFlip (),
+            new CommandRotate (),
             new CommandLeft(),
-            new CommandRight()
+            new CommandRight(),
+            new CommandScan()
 		};
 	}
 }

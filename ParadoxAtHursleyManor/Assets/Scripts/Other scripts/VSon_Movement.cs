@@ -11,7 +11,7 @@ public class VSon_Movement : MonoBehaviour {
 
     private Vector3 lerpPos;
 
-    private RaycastHit hit;
+    
 
     public float y_angle;
     public float y_position;
@@ -29,15 +29,17 @@ public class VSon_Movement : MonoBehaviour {
 	void Update () {
         fixedCamera = playerCamera.transform;
         fixedCamera.position.Set(fixedCamera.position.x, y_position, fixedCamera.position.z);
-        
-        if(Physics.Raycast(playerCamera.transform.position, playerCamera.transform.right, 3.0f))
-        {
-            fixedCamera.Rotate(-fixedCamera.eulerAngles.x, -y_angle, 0);
-        }
-        else
-        {
-            fixedCamera.Rotate(-fixedCamera.eulerAngles.x, y_angle, 0);
-        }
+
+        //if(Physics.Raycast(playerCamera.transform.position, playerCamera.transform.right, 3.0f))
+        //{
+        //    fixedCamera.Rotate(-fixedCamera.eulerAngles.x, -y_angle, 0);
+        //}
+        //else
+        //{
+        //    
+        //}
+
+        fixedCamera.Rotate(-fixedCamera.eulerAngles.x, y_angle, 0);
 
         lerpPos = fixedCamera.position + (fixedCamera.forward * x_offput);
 

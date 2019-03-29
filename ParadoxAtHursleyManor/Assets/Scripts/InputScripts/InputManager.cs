@@ -22,15 +22,15 @@ public class InputManager : MonoBehaviour
 		' '
     };
 
-    private int DEBUGVAR = 0;
-    private string[] DEBUGCOMMANDS = new string[] {
-        "place a",
-        "rotate",
-        "flip",
-        "flip",
-        "flip",
-        "place a"
-    };
+    //private int DEBUGVAR = 0;
+    //private string[] DEBUGCOMMANDS = new string[] {
+    //    "place a",
+    //    "rotate",
+    //    "flip",
+    //    "flip",
+    //    "flip",
+    //    "place a"
+    //};
 
     void Start()
     {
@@ -105,8 +105,15 @@ public class InputManager : MonoBehaviour
         latestItem = null;
         latestItemPos = null;
         ItemPosition[] itemPosToCheck = playerRef.position.AvailableItemPos;
+        //for(int i = 0; i < itemPosToCheck.Length; i++)
+        //{
+        //    if(itemPosToCheck[i] != null)
+        //    {
+        //        itemPosToCheck[i] = new ItemPosition();
+        //    }
+        //}
 
-        if(itemPosToCheck != null)
+        if(itemPosToCheck.Length != 0)
         {
             for (int i = 0; i < latestInputWordList.Length; i++)
             {               // Iteration through word input

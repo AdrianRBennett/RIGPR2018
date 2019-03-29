@@ -12,15 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScene - Basement.unity
     guid: f3c1893a1d7a2dd4cb4895f17cc5c76e
   - enabled: 1
-    path: Assets/Scenes/MainScene - MainFloor.unity
+    path: Assets/Scenes/MainScene - MainFloor - Mirror.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
-    path: 
-    guid: 0e56184bcbfe19141bc7133ed39a4880
-  - enabled: 0
-    path: 
-    guid: 8eb36fb3f30b472488acf9a084cca413
   - enabled: 1
+    path: Assets/Scenes/MainScene - MainFloor - Gear.unity
+    guid: 51657fa66e17ed344aa67e70ef068d91
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/MainScene - MainFloor 1.unity
     guid: 7fa604403ccd69646858036abc190b79
   m_configObjects: {}

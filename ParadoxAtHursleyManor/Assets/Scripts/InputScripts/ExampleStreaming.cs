@@ -228,6 +228,7 @@ public class ExampleStreaming : MonoBehaviour
                     Log.Debug("ExampleStreaming.OnRecognize()", text);
 					if(res.final == true)
 						inputMngr.ProcessInput(alt.transcript);
+                    
                 }
 
                 if (res.keywords_result != null && res.keywords_result.keyword != null)

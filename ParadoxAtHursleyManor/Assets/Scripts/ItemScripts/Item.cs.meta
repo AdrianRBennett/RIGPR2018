@@ -4,6 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
+  - mainShader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   - highShader: {fileID: 4800000, guid: 6180b7379c3e38a4c95abfb68db19de0, type: 3}
   - basePos: {instanceID: 0}
   executionOrder: 0

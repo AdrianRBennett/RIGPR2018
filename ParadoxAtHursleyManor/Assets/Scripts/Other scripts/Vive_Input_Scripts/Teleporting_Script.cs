@@ -9,7 +9,7 @@ public class Teleporting_Script : MonoBehaviour {
     public bool debugControl = false;
     public float fadeTime = 0.5f;
 
-    public GameObject cameraRig;
+    
     public Transform rightHand;
     public GameObject controlRay;
 
@@ -19,7 +19,7 @@ public class Teleporting_Script : MonoBehaviour {
     public SteamVR_Action_Boolean rotateR;
     public SteamVR_Action_Boolean pickUP;
     public SteamVR_Action_Boolean scan;
-
+    public SteamVR_Action_Boolean quit;
 
     private GameObject[] telepads;
     private GameObject[] telepadsNS;
@@ -32,6 +32,7 @@ public class Teleporting_Script : MonoBehaviour {
 
     private Vector3 newPosition;
 
+    public float quitCountDown = 0.0f;
 
     // Use this for initialization
     void Start () {
@@ -54,6 +55,20 @@ public class Teleporting_Script : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (quit.GetState(SteamVR_Input_Sources.Any))
+        {
+            quitCountDown += Time.deltaTime;
+
+            if(quit.GetState(SteamVR_Input_Sources.Any) && quitCountDown > 3.0f)
+            {
+                StartCoroutine("QuitGame");
+            }
+
+        } else
+        {
+            quitCountDown = 0;
+        }
+
         if (teleport.GetState(SteamVR_Input_Sources.RightHand))
         {
             controlRay.SetActive(true);
@@ -82,6 +97,7 @@ public class Teleporting_Script : MonoBehaviour {
             switch (rayHit.collider.tag)
             {
                 case "Telepad":
+                    GetComponent<Player>().position = rayHit.collider.gameObject.GetComponent<PlayerPosition>();
                     newPosition = rayHit.collider.gameObject.transform.position;
                     StartCoroutine("TeleportRig");
                     break;
@@ -120,7 +136,7 @@ public class Teleporting_Script : MonoBehaviour {
         {
             if (telepadsNS[i].GetComponent<Telepad_NS>().teleIndex == PlayerPrefs.GetInt("Index",0))
             {
-                cameraRig.transform.position = telepadsNS[i].transform.position;
+                transform.position = telepadsNS[i].transform.position;
                 PlayerPrefs.DeleteKey("Index");
                 break;
             }
@@ -130,7 +146,7 @@ public class Teleporting_Script : MonoBehaviour {
     private void TelepadVisible(bool visible) {
         foreach (GameObject telepad in telepads)
         {
-            if(telepad.transform.position != cameraRig.transform.position)
+            if(telepad.transform.position != transform.position)
             {
                 telepad.SetActive(visible);
             } else
@@ -141,7 +157,7 @@ public class Teleporting_Script : MonoBehaviour {
         }
         foreach (GameObject telepad in telepadsNS)
         {
-            if (telepad.transform.position != cameraRig.transform.position)
+            if (telepad.transform.position != transform.position)
             {
                 telepad.SetActive(visible);
             } else
@@ -157,7 +173,7 @@ public class Teleporting_Script : MonoBehaviour {
 
         SteamVR_Fade.View(Color.black, fadeTime);
         yield return new WaitForSeconds(fadeTime);
-        cameraRig.transform.position = newPosition;
+        transform.position = newPosition;
 
         newPosition = Vector3.zero;
 
@@ -181,6 +197,16 @@ public class Teleporting_Script : MonoBehaviour {
         
         SceneManager.LoadScene(SceneIndex);
 
+    }
+
+    private IEnumerator QuitGame()
+    {
+        SteamVR_Fade.View(Color.black, fadeTime);
+        yield return new WaitForSeconds(fadeTime);
+
+        Debug.Log("Quit");
+
+        Application.Quit();
     }
 
 
