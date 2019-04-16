@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\CommandScripts\Command.cs" />
     <Compile Include="Assets\Scripts\CommandScripts\Subclasses\CommandDrop.cs" />
     <Compile Include="Assets\Scripts\CommandScripts\Subclasses\CommandMove.cs" />
+    <Compile Include="Assets\Scripts\CommandScripts\Subclasses\CommandOpen.cs" />
     <Compile Include="Assets\Scripts\CommandScripts\Subclasses\CommandPickUp.cs" />
     <Compile Include="Assets\Scripts\CommandScripts\Subclasses\CommandPlace.cs" />
     <Compile Include="Assets\Scripts\CommandScripts\Subclasses\CommandScan.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Assets\Scripts\ItemScripts\Subclasses\GearPuzzle\PegArray.cs" />
     <Compile Include="Assets\Scripts\ItemScripts\Subclasses\Green.cs" />
     <Compile Include="Assets\Scripts\ItemScripts\Subclasses\LaserPuzzle\Mirror.cs" />
+    <Compile Include="Assets\Scripts\ItemScripts\Subclasses\Safes.cs" />
     <Compile Include="Assets\Scripts\ItemScripts\Subclasses\Scannable.cs" />
     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\Other scripts\ArtefactHandler.cs" />
@@ -107,6 +109,7 @@
     <Compile Include="Assets\Scripts\Other scripts\Mirror_Puzzle\Scripts\MirrorArtefact.cs" />
     <Compile Include="Assets\Scripts\Other scripts\Pause_Scripts\Pause_Input_Script.cs" />
     <Compile Include="Assets\Scripts\Other scripts\Pause_Scripts\Pause_Script.cs" />
+    <Compile Include="Assets\Scripts\Other scripts\ResetWatson.cs" />
     <Compile Include="Assets\Scripts\Other scripts\Scanning_Scripts\ScanBoard_Script.cs" />
     <Compile Include="Assets\Scripts\Other scripts\TestingCog.cs" />
     <Compile Include="Assets\Scripts\Other scripts\Vive_Input_Scripts\Telepad_NS.cs" />

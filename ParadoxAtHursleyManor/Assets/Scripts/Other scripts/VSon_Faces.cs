@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class VSon_Faces : MonoBehaviour {
-	
+
+    public GameObject WatsonObj;
+
 	public Material defaultFace;
 
     public Material helloFace;
@@ -23,22 +25,40 @@ public class VSon_Faces : MonoBehaviour {
     public bool confused = false;
 
 
-	private void Start(){
+	private void Awake(){
+        WatsonObj = GameObject.Find("Watson_Obj");
 		rend = GetComponent<Renderer>();
         loading = true;
-		StartCoroutine("Begin");
+		//StartCoroutine("Begin");
 	}
 	
 	private void Update(){
-		if(Input.GetKeyDown(KeyCode.F)){
-				loading = false;
-				rend.material = defaultFace;
-				StopCoroutine("LoadingF");
-				
-		}
+		//if(Input.GetKeyDown(KeyCode.F)){
+		//		loading = false;
+		//		rend.material = defaultFace;
+		//		StopCoroutine("LoadingF");
+		//		
+		//}
 		//if(!loading){
 		//	rend.material = defaultFace;
 		//}
+
+        if(WatsonObj == null)
+        {
+            WatsonObj = GameObject.Find("Watson_Obj");
+        } else
+        {
+            if(WatsonObj.GetComponent<ExampleStreaming>()._service.IsListening == true && error)
+            {
+                StopAllCoroutines();
+                rend.material = defaultFace;
+                error = false;
+            } else if(WatsonObj.GetComponent<ExampleStreaming>()._service.IsListening == false && !error)
+            {
+                error = true;
+                StartCoroutine("LoadingF");
+            }
+        }
 	}
 	
     IEnumerator Begin()

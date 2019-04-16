@@ -16,14 +16,42 @@ public class Cog : Item
 
     protected override void InitNames()
     {
-        names = new string[] {
+        if (names.Length == 0)
+        {
+            names = new string[] {
             cogID,
             "gear",
             "cog",
             "give",
             "yeah",
             "gay"
-        };
+            };
+        }
+        else
+        {
+
+            string[] extraIDs = new string[]
+            {
+                "gear",
+                "cog",
+                "give",
+                "yeah",
+                "gay"
+            };
+
+            List<string> listOfNames = new List<string>();
+            listOfNames.Add(cogID);
+
+            foreach (string name in names)
+            {
+                listOfNames.Add(name);
+            }
+
+            listOfNames.AddRange(extraIDs);
+
+            names = listOfNames.ToArray();
+        }
+        
     }
 
 

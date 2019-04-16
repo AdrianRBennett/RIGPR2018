@@ -58,7 +58,7 @@ public class ExampleStreaming : MonoBehaviour
     private int _recordingBufferSize = 1;
     private int _recordingHZ = 22050;
 
-    private SpeechToText _service;
+    public SpeechToText _service;
 
     void Start()
     {

@@ -93,14 +93,7 @@ public class PegArray : Item {
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F) && door.transform.localEulerAngles.z > 136.0f)
-        {
-            //door.transform.Rotate(-Vector3.forward * (100 * Time.deltaTime));
-            StartCoroutine("FinishPuzzle");
-        }
-    }
+    
 
     IEnumerator FinishPuzzle()
     {

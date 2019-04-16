@@ -625,6 +625,8 @@ namespace IBM.Watson.DeveloperCloud.Services.SpeechToText.v1
         /// <returns>Returns true on success, false on failure.</returns>
         public bool StopListening()
         {
+            
+
             if (!_isListening)
                 return false;
 
