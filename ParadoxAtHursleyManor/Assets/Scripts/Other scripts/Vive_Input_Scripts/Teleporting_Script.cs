@@ -6,36 +6,55 @@ using Valve.VR;
 
 public class Teleporting_Script : MonoBehaviour {
 
-    public bool debugControl = false;
-    public float fadeTime = 0.5f;
-
-    
-    public Transform rightHand;
+    // GameObjects and Transform
+    public GameObject WatsonPref;
     public GameObject controlRay;
 
+    private GameObject WatsonRef;
+    private GameObject VSon;
+    private GameObject[] telepadsNS;
+    private GameObject[] telepads;
 
+    public Transform rightHand;
+
+
+    // Input buttons
     public SteamVR_Action_Boolean teleport;
     public SteamVR_Action_Boolean rotateL;
     public SteamVR_Action_Boolean rotateR;
     public SteamVR_Action_Boolean pickUP;
     public SteamVR_Action_Boolean scan;
-    public SteamVR_Action_Boolean quit;
+    public SteamVR_Action_Boolean pause;
+    public SteamVR_Action_Boolean reset;
 
-    private GameObject[] telepads;
-    private GameObject[] telepadsNS;
-    
-    private int nextIndex;
+
+    //Misc
+
+    public bool debugControl = false;
+
+    private bool isTeleporting = false;
+    private bool paused;
+
 
     private RaycastHit rayHit;
 
-    private bool isTeleporting = false;
+    public float fadeTime = 0.5f;
+
+    private float resetCount = 0.0f;
+
 
     private Vector3 newPosition;
+    
 
-    public float quitCountDown = 0.0f;
+    private int nextIndex;
+
 
     // Use this for initialization
     void Start () {
+        if (PlayerPrefs.HasKey("Height"))
+        {
+            transform.localScale = new Vector3(transform.localScale.x, PlayerPrefs.GetFloat("Height"), transform.localScale.z);
+        }
         SteamVR_Fade.View(Color.black, 0);
         SteamVR_Fade.View(Color.clear, fadeTime * 4);
 
@@ -50,85 +69,137 @@ public class Teleporting_Script : MonoBehaviour {
             }
         }
 
+        
+        WatsonRef = GameObject.Find("Watson_Obj");
+
+        VSon = GameObject.Find("Vson");
+
         TelepadVisible(false);
     }
 	
 	// Update is called once per frame
-	void Update () {
-        if (quit.GetState(SteamVR_Input_Sources.Any))
+	void Update ()
+    {
+        if (pause.GetStateDown(SteamVR_Input_Sources.Any))
         {
-            quitCountDown += Time.deltaTime;
-
-            if(quit.GetState(SteamVR_Input_Sources.Any) && quitCountDown > 3.0f)
+            if(paused == false)
             {
-                StartCoroutine("QuitGame");
+                paused = true;
+            } else
+            {
+                paused = false;
             }
-
-        } else
-        {
-            quitCountDown = 0;
         }
 
-        if (teleport.GetState(SteamVR_Input_Sources.RightHand))
+        if (paused == false)
         {
-            controlRay.SetActive(true);
-            if (Physics.Raycast(rightHand.position, (rightHand.forward - rightHand.up), out rayHit))
-            {
-                controlRay.transform.position = rightHand.position + ((rayHit.point - rightHand.position) * 0.5f);
-                controlRay.transform.LookAt(rayHit.point);
-                controlRay.transform.Rotate(Vector3.right, 90.0f);
-                controlRay.transform.localScale = new Vector3(controlRay.transform.localScale.x, rayHit.distance * 0.5f, controlRay.transform.localScale.z);
-                TelepadVisible(true);
 
-                if(rayHit.collider.GetComponent<Item>() != null)
+            if (reset.GetState(SteamVR_Input_Sources.Any))
+            {
+                resetCount += Time.deltaTime;
+
+                if (reset.GetState(SteamVR_Input_Sources.Any) && resetCount >= 3.0f)
                 {
-                    rayHit.collider.GetComponent<Item>().highlight = true;
+                    Debug.Log("Resetting Watson");
+                    Destroy(WatsonRef);
+                    VSon.GetComponentInChildren<VSon_Faces>().StopAllCoroutines();
+                    WatsonRef = Instantiate(WatsonPref);
+                    WatsonRef.name = "Watson_Obj";
+                    VSon.GetComponentInChildren<VSon_Faces>().ResetWatson();
+                    resetCount = 0.0f;
                 }
-
-            }
-        } else if(teleport.GetStateUp(SteamVR_Input_Sources.RightHand) && isTeleporting == false)
-        {   
-            if(rayHit.collider.GetComponent<Item>() != null && scan.GetStateUp(SteamVR_Input_Sources.RightHand))
+            } else
             {
-                rayHit.collider.GetComponent<Item>().ScanThis();
-                // SCAN CODE GO HERE!
+                resetCount = 0.0f;
             }
 
-            switch (rayHit.collider.tag)
+
+
+
+            if (teleport.GetState(SteamVR_Input_Sources.RightHand))
             {
-                case "Telepad":
+                controlRay.SetActive(true);
+
+                // Create raycast from controller.
+                if (Physics.Raycast(rightHand.position, (rightHand.forward - rightHand.up), out rayHit))
+                {
+
+                    // Draw ray from controller
+                    controlRay.transform.position = rightHand.position + ((rayHit.point - rightHand.position) * 0.5f);
+                    controlRay.transform.LookAt(rayHit.point);
+                    controlRay.transform.Rotate(Vector3.right, 90.0f);
+                    controlRay.transform.localScale = new Vector3(controlRay.transform.localScale.x, rayHit.distance * 0.5f, controlRay.transform.localScale.z);
+                    TelepadVisible(true);
+
+                    // Highlight item objects
+                    if (rayHit.collider.GetComponent<Item>() != null)
+                    {
+                        rayHit.collider.GetComponent<Item>().highlight = true;
+                    }
+
+                }
+            }
+            else if (teleport.GetStateUp(SteamVR_Input_Sources.RightHand) && isTeleporting == false)
+            {
+                /*
+                if(rayHit.collider.GetComponent<Item>() != null && scan.GetStateUp(SteamVR_Input_Sources.RightHand))
+                {
+                    rayHit.collider.GetComponent<Item>().ScanThis();
+                    // SCAN CODE GO HERE!
+                }
+                */
+
+                // Teleport code here.
+                if (rayHit.collider.tag == "Telepad")
+                {
                     GetComponent<Player>().position = rayHit.collider.gameObject.GetComponent<PlayerPosition>();
                     newPosition = rayHit.collider.gameObject.transform.position;
                     StartCoroutine("TeleportRig");
-                    break;
-                case "Telepad_NS":
-                    nextIndex = rayHit.collider.gameObject.GetComponent<Telepad_NS>().teleIndex;
-                    StartCoroutine("TeleportScene", rayHit.collider.gameObject.GetComponent<Telepad_NS>().sceneIndex);
-                    break;
-                case "Mirror":
-                    if (rotateL.GetStateUp(SteamVR_Input_Sources.RightHand) && debugControl)
+
+                } // Debug controls here.
+                else if (debugControl == true)
+                {
+                    switch (rayHit.collider.tag)
                     {
-                        rayHit.collider.gameObject.GetComponent<Mirror>().RotateInit(45);
+                        case "Telepad_NS":
+                            nextIndex = rayHit.collider.gameObject.GetComponent<Telepad_NS>().teleIndex;
+                            StartCoroutine("TeleportScene", rayHit.collider.gameObject.GetComponent<Telepad_NS>().sceneIndex);
+                            break;
+                        case "Mirror":
+                            if (rotateL.GetStateUp(SteamVR_Input_Sources.RightHand) && debugControl)
+                            {
+                                rayHit.collider.gameObject.GetComponent<Mirror>().RotateInit(45);
+                            }
+                            else if (rotateR.GetStateUp(SteamVR_Input_Sources.RightHand) && debugControl)
+                            {
+                                rayHit.collider.gameObject.GetComponent<Mirror>().RotateInit(-45);
+                            }
+                            break;
+                        case "Artefact":
+                            if (pickUP.GetStateUp(SteamVR_Input_Sources.RightHand) && debugControl)
+                            {
+                                rayHit.collider.gameObject.GetComponent<Artefact>().PickUpArtefact();
+                            }
+                            break;
+                        default:
+                            break;
                     }
-                    else if (rotateR.GetStateUp(SteamVR_Input_Sources.RightHand) && debugControl)
-                    {
-                        rayHit.collider.gameObject.GetComponent<Mirror>().RotateInit(-45);
-                    }
-                    break;
-                case "Artefact":
-                    if (pickUP.GetStateUp(SteamVR_Input_Sources.RightHand) && debugControl) {
-                        rayHit.collider.gameObject.GetComponent<Artefact>().PickUpArtefact();
-                    }
-                    break;
-                default:
-                    break;
+                }
+
+                TelepadVisible(false);
+
             }
-            TelepadVisible(false);
-                
-        } else {
-            controlRay.SetActive(false);
+            else
+            {
+                controlRay.SetActive(false);
+            }
         }
-	}
+        else
+        {
+
+        }
+
+    }
 
     private void NewScene()
     {

@@ -3,7 +3,18 @@ guid: 4135ef478ae3a5e4798fec070b420442
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - WatsonPref: {fileID: 1435183181863804, guid: 9c59ad498c1840946931eba25b48677f,
+      type: 2}
+  - rightHand: {instanceID: 0}
+  - controlRay: {instanceID: 0}
+  - teleport: {fileID: 11400000, guid: f2a016367d94bf84cbc9c7ce2ff9756f, type: 2}
+  - rotateL: {fileID: 11400000, guid: 4a18bfd32f2f9ed438674f34e8f62642, type: 2}
+  - rotateR: {fileID: 11400000, guid: b4afe6a8eade5804ea5539ac3117a4f6, type: 2}
+  - pickUP: {fileID: 11400000, guid: 592fbae5d58636548944ff2defcf3bf0, type: 2}
+  - scan: {fileID: 11400000, guid: 03276c1f4d48cf248bd00e5f99b0e0b2, type: 2}
+  - pause: {fileID: 11400000, guid: cafd53f06e6192949b3f9e2f1a603c2d, type: 2}
+  - reset: {fileID: 11400000, guid: 7f09b5edb48d37946adfac04bb85aedb, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

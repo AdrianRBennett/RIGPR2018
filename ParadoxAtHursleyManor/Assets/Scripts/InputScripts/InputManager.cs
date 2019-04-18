@@ -22,6 +22,8 @@ public class InputManager : MonoBehaviour
 		' '
     };
 
+    private GameObject VSon;
+
     //private int DEBUGVAR = 0;
     //private string[] DEBUGCOMMANDS = new string[] {
     //    "place a",
@@ -37,6 +39,8 @@ public class InputManager : MonoBehaviour
         /*
 			Initialisation function. 
 		*/
+        VSon = GameObject.Find("VSon");
+
         latestInputWordList = new string[] {
             "default"
         };
@@ -77,6 +81,8 @@ public class InputManager : MonoBehaviour
 			A function to be called by the input source.
 			It calls the necessary functions to identify functions from spoken words and send corresponding commands to the correct items.
 		*/
+
+        //VSon.GetComponentInChildren<VSon_Faces>().StopAllCoroutines();
         latestInputWordList = SplitInputToWordList(input);
         IdentifyCommandsAndItems(sceneDataRef);
         SendCommand();
@@ -180,6 +186,9 @@ public class InputManager : MonoBehaviour
         if (latestItem != null && latestCommand != string.Empty)
         {                           // Command sent to non-held item.
             latestItem.TakeCommand(latestCommand);
+
+        } else
+        {
 
         }
         //else if (latestItemPos != null && latestItemPos.heldItem == null && latestCommand == CommandPlace.identifier)

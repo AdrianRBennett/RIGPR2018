@@ -33,7 +33,7 @@ namespace Valve.VR
         
         public Valve.VR.SteamVR_Action_Single Squeeze;
         
-        public Valve.VR.SteamVR_Action_Boolean Quit;
+        public Valve.VR.SteamVR_Action_Boolean Pause;
         
         public Valve.VR.SteamVR_Action_Boolean RotateLeft;
         
@@ -44,5 +44,7 @@ namespace Valve.VR
         public Valve.VR.SteamVR_Action_Boolean PickUp;
         
         public Valve.VR.SteamVR_Action_Boolean Scan;
+        
+        public Valve.VR.SteamVR_Action_Boolean Reset;
     }
 }

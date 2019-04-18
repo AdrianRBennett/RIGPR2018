@@ -34096,6 +34096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4135ef478ae3a5e4798fec070b420442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WatsonPref: {fileID: 0}
   debugControl: 1
   fadeTime: 0.5
   rightHand: {fileID: 1201251317}
@@ -34105,8 +34106,8 @@ MonoBehaviour:
   rotateR: {fileID: 11400000, guid: b4afe6a8eade5804ea5539ac3117a4f6, type: 2}
   pickUP: {fileID: 11400000, guid: 592fbae5d58636548944ff2defcf3bf0, type: 2}
   scan: {fileID: 11400000, guid: 03276c1f4d48cf248bd00e5f99b0e0b2, type: 2}
-  quit: {fileID: 11400000, guid: 3993e31251aab824497dae067a735cb5, type: 2}
-  quitCountDown: 0
+  pause: {fileID: 0}
+  reset: {fileID: 0}
 --- !u!81 &796284008
 AudioListener:
   m_ObjectHideFlags: 0
@@ -39109,11 +39110,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 936807963}
@@ -57425,11 +57426,11 @@ MonoBehaviour:
     lineCount: 5
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1346892562}
@@ -77030,6 +77031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd5f35eca94e6e44b9ea734cb46479d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WatsonObj: {fileID: 0}
   defaultFace: {fileID: 2100000, guid: 65216f1d219914549a7dd9fd881f6872, type: 2}
   helloFace: {fileID: 0}
   randomFaces:
