@@ -287,6 +287,12 @@ MonoBehaviour:
   highlight: 0
   description: How secure...I bet I can open it.
   identifier: A Safe
-  names: []
+  names:
+  - safe
+  - Safe
+  - save
+  - Save
+  - safes
+  - Safes
   basePos: {fileID: 0}
   housedObject: {fileID: 1387094155690260}
