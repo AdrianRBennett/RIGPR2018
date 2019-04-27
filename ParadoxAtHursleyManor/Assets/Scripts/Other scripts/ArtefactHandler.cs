@@ -9,9 +9,20 @@ public class ArtefactHandler : MonoBehaviour {
 
     public int Artefacts;
 
+    public static ArtefactHandler instance;
+
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         DontDestroyOnLoad(gameObject);
+
+        if(instance == null)
+        {
+            instance = this;
+        } else
+        {
+            Destroy(gameObject);
+        }
+
         Artefacts = 0;
     }
 

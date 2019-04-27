@@ -33,18 +33,16 @@ namespace Valve.VR
         
         public Valve.VR.SteamVR_Action_Single Squeeze;
         
-        public Valve.VR.SteamVR_Action_Boolean Pause;
-        
         public Valve.VR.SteamVR_Action_Boolean RotateLeft;
         
         public Valve.VR.SteamVR_Action_Boolean RotateRight;
         
-        public Valve.VR.SteamVR_Action_Boolean ActivateLaser;
-        
         public Valve.VR.SteamVR_Action_Boolean PickUp;
         
-        public Valve.VR.SteamVR_Action_Boolean Scan;
+        public Valve.VR.SteamVR_Action_Boolean Pause;
         
         public Valve.VR.SteamVR_Action_Boolean Reset;
+        
+        public Valve.VR.SteamVR_Action_Boolean Scan;
     }
 }

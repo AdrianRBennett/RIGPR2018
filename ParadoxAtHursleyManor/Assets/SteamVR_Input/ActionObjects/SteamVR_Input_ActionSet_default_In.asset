@@ -22,13 +22,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 07eeac6684ce61e419951accf69327c9, type: 2}
   - {fileID: 11400000, guid: 259d79b155f8f5649986ea37334e4f63, type: 2}
   - {fileID: 11400000, guid: c5f6c8fee2489c346bd43bae948720df, type: 2}
-  - {fileID: 11400000, guid: cafd53f06e6192949b3f9e2f1a603c2d, type: 2}
   - {fileID: 11400000, guid: 4a18bfd32f2f9ed438674f34e8f62642, type: 2}
   - {fileID: 11400000, guid: b4afe6a8eade5804ea5539ac3117a4f6, type: 2}
-  - {fileID: 11400000, guid: cc5781ce40798c1478dcdabe3e637e07, type: 2}
   - {fileID: 11400000, guid: 592fbae5d58636548944ff2defcf3bf0, type: 2}
-  - {fileID: 11400000, guid: 03276c1f4d48cf248bd00e5f99b0e0b2, type: 2}
+  - {fileID: 11400000, guid: cafd53f06e6192949b3f9e2f1a603c2d, type: 2}
   - {fileID: 11400000, guid: 7f09b5edb48d37946adfac04bb85aedb, type: 2}
+  - {fileID: 11400000, guid: 03276c1f4d48cf248bd00e5f99b0e0b2, type: 2}
   InteractUI: {fileID: 11400000, guid: 0059b1bb530812f499b6de3217888aca, type: 2}
   Teleport: {fileID: 11400000, guid: f2a016367d94bf84cbc9c7ce2ff9756f, type: 2}
   GrabPinch: {fileID: 11400000, guid: 8257caab71b1ca34aab37a9f09a1ced8, type: 2}
@@ -37,10 +36,9 @@ MonoBehaviour:
   SkeletonLeftHand: {fileID: 11400000, guid: 07eeac6684ce61e419951accf69327c9, type: 2}
   SkeletonRightHand: {fileID: 11400000, guid: 259d79b155f8f5649986ea37334e4f63, type: 2}
   Squeeze: {fileID: 11400000, guid: c5f6c8fee2489c346bd43bae948720df, type: 2}
-  Pause: {fileID: 11400000, guid: cafd53f06e6192949b3f9e2f1a603c2d, type: 2}
   RotateLeft: {fileID: 11400000, guid: 4a18bfd32f2f9ed438674f34e8f62642, type: 2}
   RotateRight: {fileID: 11400000, guid: b4afe6a8eade5804ea5539ac3117a4f6, type: 2}
-  ActivateLaser: {fileID: 11400000, guid: cc5781ce40798c1478dcdabe3e637e07, type: 2}
   PickUp: {fileID: 11400000, guid: 592fbae5d58636548944ff2defcf3bf0, type: 2}
-  Scan: {fileID: 11400000, guid: 03276c1f4d48cf248bd00e5f99b0e0b2, type: 2}
+  Pause: {fileID: 11400000, guid: cafd53f06e6192949b3f9e2f1a603c2d, type: 2}
   Reset: {fileID: 11400000, guid: 7f09b5edb48d37946adfac04bb85aedb, type: 2}
+  Scan: {fileID: 11400000, guid: 03276c1f4d48cf248bd00e5f99b0e0b2, type: 2}

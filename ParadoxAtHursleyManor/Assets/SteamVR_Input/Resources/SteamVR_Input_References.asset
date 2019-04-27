@@ -28,13 +28,12 @@ MonoBehaviour:
   - __actions_default_in_SkeletonLeftHand
   - __actions_default_in_SkeletonRightHand
   - __actions_default_in_Squeeze
-  - __actions_default_in_Pause
   - __actions_default_in_RotateLeft
   - __actions_default_in_RotateRight
-  - __actions_default_in_ActivateLaser
   - __actions_default_in_PickUp
-  - __actions_default_in_Scan
+  - __actions_default_in_Pause
   - __actions_default_in_Reset
+  - __actions_default_in_Scan
   - __actions_default_out_Haptic
   - __actions_platformer_in_Move
   - __actions_platformer_in_Jump
@@ -51,13 +50,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 07eeac6684ce61e419951accf69327c9, type: 2}
   - {fileID: 11400000, guid: 259d79b155f8f5649986ea37334e4f63, type: 2}
   - {fileID: 11400000, guid: c5f6c8fee2489c346bd43bae948720df, type: 2}
-  - {fileID: 11400000, guid: cafd53f06e6192949b3f9e2f1a603c2d, type: 2}
   - {fileID: 11400000, guid: 4a18bfd32f2f9ed438674f34e8f62642, type: 2}
   - {fileID: 11400000, guid: b4afe6a8eade5804ea5539ac3117a4f6, type: 2}
-  - {fileID: 11400000, guid: cc5781ce40798c1478dcdabe3e637e07, type: 2}
   - {fileID: 11400000, guid: 592fbae5d58636548944ff2defcf3bf0, type: 2}
-  - {fileID: 11400000, guid: 03276c1f4d48cf248bd00e5f99b0e0b2, type: 2}
+  - {fileID: 11400000, guid: cafd53f06e6192949b3f9e2f1a603c2d, type: 2}
   - {fileID: 11400000, guid: 7f09b5edb48d37946adfac04bb85aedb, type: 2}
+  - {fileID: 11400000, guid: 03276c1f4d48cf248bd00e5f99b0e0b2, type: 2}
   - {fileID: 11400000, guid: 3ec5d17ce15708e449a926c9509c40e9, type: 2}
   - {fileID: 11400000, guid: 1a180e4d48ceea1489b575d86d1d3a5c, type: 2}
   - {fileID: 11400000, guid: a750448415f06c240850513df08e217c, type: 2}

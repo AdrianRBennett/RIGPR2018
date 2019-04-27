@@ -14,6 +14,7 @@ public class MirrorArtefact : MonoBehaviour {
 
     public GameObject telepad;
 
+
     public void Activate()
     {
         if (!active && (player.GetComponent<Player>().position == telepad.GetComponent<PlayerPosition>()))
@@ -48,11 +49,19 @@ public class MirrorArtefact : MonoBehaviour {
         yield return new WaitForSeconds(1.0f);
         artefact.SetActive(true);
 
+        telepad.GetComponent<PlayerPosition>().AvailableItemPos = new ItemPosition[1]
+        {
+            artefact.GetComponent<ItemPosition>()
+        };
+
         yield return null;
     }
     
 	// Update is called once per frame
 	void Update () {
-        
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Activate();
+        }
 	}
 }

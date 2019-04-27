@@ -14,6 +14,8 @@ public class Teleporting_Script : MonoBehaviour {
     private GameObject VSon;
     private GameObject[] telepadsNS;
     private GameObject[] telepads;
+    private GameObject pauseMenu;
+
 
     public Transform rightHand;
 
@@ -23,7 +25,7 @@ public class Teleporting_Script : MonoBehaviour {
     public SteamVR_Action_Boolean rotateL;
     public SteamVR_Action_Boolean rotateR;
     public SteamVR_Action_Boolean pickUP;
-    public SteamVR_Action_Boolean scan;
+    //public SteamVR_Action_Boolean scan;
     public SteamVR_Action_Boolean pause;
     public SteamVR_Action_Boolean reset;
 
@@ -50,10 +52,11 @@ public class Teleporting_Script : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         if (PlayerPrefs.HasKey("Height"))
         {
             transform.localScale = new Vector3(transform.localScale.x, PlayerPrefs.GetFloat("Height"), transform.localScale.z);
+            PlayerPrefs.DeleteKey("Height");
         }
         SteamVR_Fade.View(Color.black, 0);
         SteamVR_Fade.View(Color.clear, fadeTime * 4);
@@ -74,6 +77,8 @@ public class Teleporting_Script : MonoBehaviour {
 
         VSon = GameObject.Find("Vson");
 
+        pauseMenu = GameObject.Find("Pause Menu");
+
         TelepadVisible(false);
     }
 	
@@ -84,10 +89,12 @@ public class Teleporting_Script : MonoBehaviour {
         {
             if(paused == false)
             {
+                pauseMenu.GetComponent<Pause_Script>().SetupMenu(transform.position);
                 paused = true;
             } else
             {
                 paused = false;
+                pauseMenu.GetComponent<Pause_Script>().DisableMenu();
             }
         }
 
@@ -156,14 +163,18 @@ public class Teleporting_Script : MonoBehaviour {
                     newPosition = rayHit.collider.gameObject.transform.position;
                     StartCoroutine("TeleportRig");
 
-                } // Debug controls here.
-                else if (debugControl == true)
+                } else if (rayHit.collider.tag == "Telepad_NS")
+                {
+                    nextIndex = rayHit.collider.gameObject.GetComponent<Telepad_NS>().teleIndex;
+                    StartCoroutine("TeleportScene", rayHit.collider.gameObject.GetComponent<Telepad_NS>().sceneIndex);
+                }
+
+                if (debugControl == true)
                 {
                     switch (rayHit.collider.tag)
                     {
                         case "Telepad_NS":
-                            nextIndex = rayHit.collider.gameObject.GetComponent<Telepad_NS>().teleIndex;
-                            StartCoroutine("TeleportScene", rayHit.collider.gameObject.GetComponent<Telepad_NS>().sceneIndex);
+                            
                             break;
                         case "Mirror":
                             if (rotateL.GetStateUp(SteamVR_Input_Sources.RightHand) && debugControl)
@@ -196,13 +207,74 @@ public class Teleporting_Script : MonoBehaviour {
         }
         else
         {
+            if (teleport.GetState(SteamVR_Input_Sources.RightHand))
+            {
+                controlRay.SetActive(true);
 
+                // Create raycast from controller.
+                if (Physics.Raycast(rightHand.position, (rightHand.forward - rightHand.up), out rayHit))
+                {
+
+                    // Draw ray from controller
+                    controlRay.transform.position = rightHand.position + ((rayHit.point - rightHand.position) * 0.5f);
+                    controlRay.transform.LookAt(rayHit.point);
+                    controlRay.transform.Rotate(Vector3.right, 90.0f);
+                    controlRay.transform.localScale = new Vector3(controlRay.transform.localScale.x, rayHit.distance * 0.5f, controlRay.transform.localScale.z);
+                    //TelepadVisible(true);
+
+                } 
+            }
+            else if(teleport.GetStateUp(SteamVR_Input_Sources.RightHand))
+            {
+
+                switch (rayHit.collider.name)
+                {
+                    case "Resume Button":
+                        if(pauseMenu.GetComponent<Pause_Script>().ResumeButton() == 0)
+                        {
+                            paused = false;
+                            pauseMenu.GetComponent<Pause_Script>().DisableMenu();
+                        } else if(pauseMenu.GetComponent<Pause_Script>().ResumeButton() == 1)
+                        {
+                            StartCoroutine("QuitGame");
+                        }
+                        break;
+
+                    case "Option Button":
+
+                        pauseMenu.GetComponent<Pause_Script>().OptionsButton();
+                        break;
+
+                    case "Quit Button":
+                        pauseMenu.GetComponent<Pause_Script>().QuitButton();
+                        break;
+                    default:
+                        break;
+                }
+            } else
+            {
+                controlRay.SetActive(false);
+            }
+
+            if (pauseMenu.GetComponent<Pause_Script>().options)
+            {
+                if (rotateL.GetStateUp(SteamVR_Input_Sources.RightHand))
+                {
+                    transform.localScale = transform.localScale - new Vector3(0, 0.05f, 0);
+                }
+                else if (rotateR.GetStateUp(SteamVR_Input_Sources.RightHand))
+                {
+                    transform.localScale = transform.localScale + new Vector3(0, 0.05f, 0);
+                }
+            }
         }
 
     }
 
     private void NewScene()
     {
+        
+
         for (int i = 0; i < telepadsNS.Length; i++)
         {
             if (telepadsNS[i].GetComponent<Telepad_NS>().teleIndex == PlayerPrefs.GetInt("Index",0))
@@ -257,6 +329,7 @@ public class Teleporting_Script : MonoBehaviour {
 
     private IEnumerator TeleportScene(int SceneIndex)
     {
+        PlayerPrefs.SetFloat("Height", transform.localScale.y);
         isTeleporting = true;
 
 

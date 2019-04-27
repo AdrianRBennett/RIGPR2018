@@ -36,6 +36,30 @@
       "requirement": "optional"
     },
     {
+      "name": "/actions/default/in/RotateLeft",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/RotateRight",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/PickUp",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/Pause",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/Reset",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/Scan",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },

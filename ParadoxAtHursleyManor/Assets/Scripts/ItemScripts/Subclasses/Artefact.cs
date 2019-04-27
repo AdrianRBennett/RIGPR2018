@@ -25,12 +25,38 @@ public class Artefact : Item {
 
     protected override void InitNames()
     {
-        names = new string[] {
-            "artefact",
+        
+        if (names.Length == 0)
+        {
+            names = new string[] {
             identifier,
+            "artefact",
             "item",
             "gizmo"
-        };
+            };
+        }
+        else
+        {
+
+            string[] extraIDs = new string[]
+            {
+                "artefact",
+                "item",
+                "gizmo"
+            };
+
+            List<string> listOfNames = new List<string>();
+            listOfNames.Add(identifier);
+
+            foreach (string name in names)
+            {
+                listOfNames.Add(name);
+            }
+
+            listOfNames.AddRange(extraIDs);
+
+            names = listOfNames.ToArray();
+        }
     }
 
     public void PickUpArtefact()
