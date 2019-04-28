@@ -76,6 +76,13 @@ public class Cog : Item
         {
             playerRef.heldItem = this;
             beingHeld = true;
+
+            if (gameObject.GetComponent<AudioSource>() != null)
+            {
+                gameObject.GetComponent<AudioSource>().Stop();
+            }
+
+            FindObjectOfType<AudioManager>().Play("pickup");
         }
     }
 

@@ -40,12 +40,15 @@ public class MirrorArtefact : MonoBehaviour {
     {
         float scaleInc = 0.08f / 500f;
         Vector3 scaleV = new Vector3(scaleInc, scaleInc, scaleInc);
-
+        gameObject.GetComponent<AudioSource>().Play();
         for(int i = 0; i < 500; i++)
         {
             plant.transform.localScale += scaleV;
             yield return new WaitForSeconds(0.005f);
         }
+        gameObject.GetComponent<AudioSource>().Stop();
+
+
         yield return new WaitForSeconds(1.0f);
         artefact.SetActive(true);
 

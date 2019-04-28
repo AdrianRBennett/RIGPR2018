@@ -99,6 +99,8 @@ public class Mirror : Item
     {
         if (isRotating == false)
         {
+            gameObject.GetComponent<AudioSource>().Play();
+
             isRotating = true;
             StartCoroutine(Rotate(-Vector3.forward, angle, 1.0f));
         }

@@ -78,11 +78,16 @@ public class PegArray : Item {
                     playerRef.heldItem.GetComponent<Cog>().onPeg = true;
                     playerRef.heldItem = null;
 
+                    FindObjectOfType<AudioManager>().Play("place");
+
                     gearsCollected[i] = true;
                     if(gearsCollected[0] && gearsCollected[1] && gearsCollected[2] && gearsCollected[3] && gearsCollected[4]){
                         StartCoroutine("FinishPuzzle");
                     }
                     placed = true;
+
+                    
+
                     break;
                 }
             }
@@ -97,6 +102,8 @@ public class PegArray : Item {
 
     IEnumerator FinishPuzzle()
     {
+        gameObject.GetComponent<AudioSource>().Play();
+
         while (door.transform.localEulerAngles.z > 136.0f)
         {
             door.transform.Rotate(-Vector3.forward * (100 * Time.deltaTime));

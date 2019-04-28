@@ -61,6 +61,11 @@ public class Artefact : Item {
 
     public void PickUpArtefact()
     {
+        if(gameObject.GetComponent<AudioSource>() != null)
+        {
+            gameObject.GetComponent<AudioSource>().Play();
+        }
+
         GameObject.Find("ArtefactHandler").GetComponent<ArtefactHandler>().ArtefactInit(ID);
         gameObject.SetActive(false);
     }
