@@ -12,6 +12,7 @@ TagManager:
   - Telepad
   - Telepad_NS
   - Artefact
+  - Gear
   layers:
   - Default
   - TransparentFX

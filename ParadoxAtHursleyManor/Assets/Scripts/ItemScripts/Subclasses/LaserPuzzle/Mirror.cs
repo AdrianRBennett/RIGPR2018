@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +19,8 @@ public class Mirror : Item
 
     protected CommandRight cRotateR = new CommandRight();
 
+    public GameObject HighlightObj;
+    
     public override void TakeCommand(string commandName)
     {
         base.TakeCommand(commandName);
@@ -121,5 +124,32 @@ public class Mirror : Item
         }
         transform.rotation = to;
         isRotating = false;
+    }
+
+    //void Awake()
+    //{
+    //    if(HighlightObj == null)
+    //    {
+    //        HighlightObj = gameObject.transform.parent.GetChild(3).gameObject;
+    //    }
+    //}
+
+    void Update()
+    {
+        if(FindObjectOfType<Player>().position.AvailableItemPos.Length != 0)
+        {
+            if (FindObjectOfType<Player>().position.AvailableItemPos[0] == gameObject.GetComponent<ItemPosition>())
+            {
+                HighlightObj.SetActive(true);
+                HighlightObj.transform.Rotate(Vector3.up, 1.0f);
+            } else
+            {
+                HighlightObj.SetActive(false);
+            }
+            
+        } else
+        {
+            HighlightObj.SetActive(false);
+        }
     }
 }

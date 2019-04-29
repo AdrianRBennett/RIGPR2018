@@ -21,10 +21,15 @@ public class Cog : Item
             names = new string[] {
             cogID,
             "gear",
+            "Gear",
             "cog",
+            "Cog",
             "give",
+            "Give",
             "yeah",
-            "gay"
+            "Yeah",
+            "gay",
+            "Gay"
             };
         }
         else
@@ -33,10 +38,15 @@ public class Cog : Item
             string[] extraIDs = new string[]
             {
                 "gear",
+                "Gear",
                 "cog",
+                "Cog",
                 "give",
+                "Give",
                 "yeah",
-                "gay"
+                "Yeah",
+                "gay",
+                "Gay"
             };
 
             List<string> listOfNames = new List<string>();
@@ -72,7 +82,7 @@ public class Cog : Item
 
     public void Pickup()
     {
-        if(playerRef.heldItem == null)
+        if(playerRef.heldItem == null && onPeg != true)
         {
             playerRef.heldItem = this;
             beingHeld = true;

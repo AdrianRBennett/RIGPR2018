@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class InputManager : MonoBehaviour
 {
 
     // PUBLIC MEMBERS
 
-    public UnityEngine.UI.Text customDebugText;         // A debug text object that displays the latest spoken words.
-    public bool customDebugTextOn;                      // A flag to control the display of the debug text.
+    public TextMeshPro customDebugText;         // A debug text object that displays the latest spoken words.
+    public bool customDebugTextOn = true;                      // A flag to control the display of the debug text.
 
     // PRIVATE MEMBERS
 
@@ -41,11 +42,18 @@ public class InputManager : MonoBehaviour
 		*/
         VSon = GameObject.Find("VSon");
 
+        customDebugTextOn = true;
+
         latestInputWordList = new string[] {
-            "default"
+            "WATSON API"
         };
         playerRef = FindObjectOfType<Player>();
         sceneDataRef = FindObjectOfType<SceneData>();
+
+        if(customDebugText == null)
+        {
+            customDebugText = GameObject.Find("Debug Log").GetComponent<TextMeshPro>();
+        }
     }
 
     void Update()
@@ -53,12 +61,12 @@ public class InputManager : MonoBehaviour
         /*
 			Update function. 
 		*/
-        //customDebugText.text = "";
+        customDebugText.text = "";
         if (customDebugTextOn)
         {
             for (int i = 0; i < latestInputWordList.Length; i++)
             {
-                //customDebugText.text += latestInputWordList[i] + " ";
+                customDebugText.text += latestInputWordList[i] + " ";
             }
         }
 

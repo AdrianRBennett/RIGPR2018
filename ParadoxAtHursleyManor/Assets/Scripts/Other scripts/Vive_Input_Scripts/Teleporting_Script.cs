@@ -123,7 +123,7 @@ public class Teleporting_Script : MonoBehaviour {
 
 
 
-            if (teleport.GetState(SteamVR_Input_Sources.RightHand))
+            if (teleport.GetState(SteamVR_Input_Sources.RightHand) || rotateL.GetState(SteamVR_Input_Sources.RightHand) || rotateR.GetState(SteamVR_Input_Sources.RightHand))
             {
                 controlRay.SetActive(true);
 
@@ -146,7 +146,7 @@ public class Teleporting_Script : MonoBehaviour {
 
                 }
             }
-            else if (teleport.GetStateUp(SteamVR_Input_Sources.RightHand) && isTeleporting == false)
+            else if ((teleport.GetStateUp(SteamVR_Input_Sources.RightHand) || rotateL.GetStateUp(SteamVR_Input_Sources.RightHand) || rotateR.GetStateUp(SteamVR_Input_Sources.RightHand)) && isTeleporting == false)
             {
                 /*
                 if(rayHit.collider.GetComponent<Item>() != null && scan.GetStateUp(SteamVR_Input_Sources.RightHand))
@@ -187,10 +187,10 @@ public class Teleporting_Script : MonoBehaviour {
                             }
                             break;
                         case "Artefact":
-                            if (pickUP.GetStateUp(SteamVR_Input_Sources.RightHand) && debugControl)
-                            {
-                                rayHit.collider.gameObject.GetComponent<Artefact>().PickUpArtefact();
-                            }
+                            rayHit.collider.gameObject.GetComponent<Artefact>().PickUpArtefact();
+                            break;
+                        case "Gear":
+                                rayHit.collider.gameObject.GetComponent<Cog>().Pickup();
                             break;
                         default:
                             break;
